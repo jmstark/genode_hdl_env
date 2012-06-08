@@ -1,0 +1,111 @@
+#
+# \brief   Test verilog PTC
+# \author  Martin Stein
+# \date    2012-12-04
+#
+
+# build program images
+build "core init vinit test/timer test/ptc_hdl_env drivers/timer drivers/ptc_timer"
+
+# create directory where the boot files are written to
+create_boot_directory
+
+# create XML configuration for init
+install_config {
+<config verbose="no">
+	<parent-provides>
+		<service name="ROM"/>
+		<service name="RAM"/>
+		<service name="CAP"/>
+		<service name="PD"/>
+		<service name="RM"/>
+		<service name="CPU"/>
+		<service name="IO_MEM"/>
+		<service name="IRQ"/>
+		<service name="LOG"/>
+		<service name="SIGNAL"/>
+	</parent-provides>
+	<default-route>
+		<service name="Timer"><child name="timer"/></service>
+		<any-service><parent/></any-service>
+	</default-route>
+
+	<start name="timer">
+		<resource name="RAM" quantum="10M"/>
+		<provides><service name="Timer"/></provides>
+	</start>
+
+	<start name="test_1">
+		<binary name="test-timer"/>
+		<resource name="RAM" quantum="20M"/>
+	</start>
+
+	<start name="vinit">
+		<resource name="RAM" quantum="200M"/>
+		<config verbose="no">
+			<parent-provides>
+				<service name="ROM"/>
+				<service name="RAM"/>
+				<service name="CAP"/>
+				<service name="PD"/>
+				<service name="RM"/>
+				<service name="CPU"/>
+				<service name="IO_MEM"/>
+				<service name="IRQ"/>
+				<service name="LOG"/>
+				<service name="SIGNAL"/>
+				<service name="Timer"/>
+			</parent-provides>
+			<default-route><any-service><parent/></any-service></default-route>
+
+			<emulator name="ptc">
+				<binary name="test-ptc_hdl_env-ptc"/>
+				<resource name="RAM" quantum="10M"/>
+			</emulator>
+
+			<emulated by="ptc">
+				<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
+				<resource name="IRQ" base="100" size="1" local="0"/>
+			</emulated>
+
+			<start name="ptc_timer">
+				<resource name="RAM" quantum="20M"/>
+				<provides><service name="Timer"/></provides>
+			</start>
+
+			<start name="test_2">
+				<binary name="test-timer"/>
+				<resource name="RAM" quantum="20M"/>
+				<route>
+					<service name="Timer"><child name="ptc_timer"/></service>
+					<any-service><parent /></any-service>
+				</route>
+			</start>
+
+		</config>
+	</start>
+
+</config>
+}
+
+# build single boot image
+set boot_modules {
+	core
+	init
+	vinit
+	timer
+	test-timer
+	ptc_timer
+	test-ptc_hdl_env-ptc
+	ld.lib.so
+	stdcxx.lib.so
+	libc.lib.so
+	libc_log.lib.so
+	libc_fs.lib.so
+	libm.lib.so
+}
+build_boot_image $boot_modules
+
+# execute test in qemu
+run_genode_until forever
+

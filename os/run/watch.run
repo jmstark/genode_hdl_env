@@ -1,0 +1,42 @@
+
+set build_components {
+	core init test/watch
+}
+
+build $build_components
+create_boot_directory
+
+set config  {
+	<config>
+		<parent-provides>
+			<service name="ROM"/>
+			<service name="RAM"/>
+			<service name="IRQ"/>
+			<service name="IO_MEM"/>
+			<service name="CAP"/>
+			<service name="PD"/>
+			<service name="RM"/>
+			<service name="CPU"/>
+			<service name="LOG"/>
+			<service name="SIGNAL"/>
+		</parent-provides>
+		<default-route>
+			<any-service> <parent/> <any-child/> </any-service>
+		</default-route>
+
+		<start name="test-watch">
+			<binary name="test-watch"/>
+			<resource name="RAM" quantum="3M"/>
+		</start>
+	</config>
+}
+
+install_config $config
+
+set boot_modules {
+	core init test-watch
+}
+
+build_boot_image $boot_modules
+run_genode_until forever
+

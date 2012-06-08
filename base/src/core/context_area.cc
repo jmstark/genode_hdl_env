@@ -109,7 +109,7 @@ class Context_area_rm_session : public Rm_session
 			Genode::unmap_local(ds->core_local_addr(), ds->size() >> get_page_size_log2());
 		}
 
-		Pager_capability add_client(Thread_capability) {
+		Pager_capability add_client(Thread_capability, unsigned) {
 			return Pager_capability(); }
 
 		void remove_client(Pager_capability) { }

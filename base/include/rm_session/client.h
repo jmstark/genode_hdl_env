@@ -37,8 +37,8 @@ namespace Genode {
 		void detach(Local_addr local_addr) {
 			call<Rpc_detach>(local_addr); }
 
-		Pager_capability add_client(Thread_capability thread) {
-			return call<Rpc_add_client>(thread); }
+		Pager_capability add_client(Thread_capability thread, unsigned imprint = 0) {
+			return call<Rpc_add_client>(thread, imprint); }
 
 		void remove_client(Pager_capability pager) {
 			call<Rpc_remove_client>(pager); }
@@ -51,6 +51,8 @@ namespace Genode {
 
 		Dataspace_capability dataspace() {
 			return call<Rpc_dataspace>(); }
+
+		void processed(State state) { call<Rpc_processed>(state); }
 	};
 }
 

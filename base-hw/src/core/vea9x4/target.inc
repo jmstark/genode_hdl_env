@@ -10,7 +10,8 @@ INC_DIR += $(REP_DIR)/src/core/vea9x4
 
 # add C++ sources
 SRC_CC  += platform_services.cc \
-           platform_support.cc
+           platform_support.cc \
+           pager_support.cc
 
 # add assembly sources
 SRC_S += crt0.s \
@@ -29,6 +30,7 @@ else
 endif
 
 # declare source paths
+vpath pager_support.cc  $(REP_DIR)/src/core/arm_v7
 vpath mode_transition.s $(REP_DIR)/src/core/arm_v7
 vpath crt0.s            $(REP_DIR)/src/core/arm
 

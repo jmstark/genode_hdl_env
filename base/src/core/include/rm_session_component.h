@@ -110,6 +110,7 @@ namespace Genode {
 			Lock                  _lock;
 			Rm_session_component *_faulting_rm_session;
 			Rm_session::State     _fault_state;
+			unsigned              _imprint;
 
 		public:
 
@@ -117,11 +118,16 @@ namespace Genode {
 			 * Constructor
 			 *
 			 * \param Pager_object  pager object that corresponds to the faulter
+			 * \param imprint       signature that might be given by the RM
+			 *                      session client to match faults to faulters
+			 *                      through the RM state
 			 *
 			 * Currently, there is only one pager in core.
 			 */
-			Rm_faulter(Pager_object *pager_object) :
-				_pager_object(pager_object), _faulting_rm_session(0) { }
+			Rm_faulter(Pager_object *pager_object, unsigned imprint) :
+				_pager_object(pager_object), _faulting_rm_session(0),
+				_imprint(imprint)
+			{ }
 
 			/**
 			 * Assign fault state
@@ -152,6 +158,11 @@ namespace Genode {
 			 * Wake up faulter by answering the pending page fault
 			 */
 			void continue_after_resolved_fault();
+
+			/**
+			 * Continue faulter after its faulting instruction has been emulated
+			 */
+			void continue_after_processed_fault();
 	};
 
 
@@ -181,7 +192,6 @@ namespace Genode {
 			Rm_session_component *member_rm_session() { return _rm_session; }
 	};
 
-
 	class Rm_client : public Pager_object, public Rm_member, public Rm_faulter,
 	                  public List<Rm_client>::Element
 	{
@@ -197,12 +207,16 @@ namespace Genode {
 			 * \param session  RM session to which the client belongs
 			 * \param badge    pager-object badge used of identifying the client
 			 *                 when a page-fault occurs
+			 * \param imprint  signature that might be given by the RM session
+			 *                 client to match faults to faulters through the
+			 *                 RM state
 			 */
 			Rm_client(Rm_session_component *session, unsigned long badge,
-			          Weak_ptr<Address_space> &address_space)
+			          Weak_ptr<Address_space> &address_space, unsigned imprint)
 			:
-				Pager_object(badge), Rm_member(session), Rm_faulter(this),
-				_address_space(address_space) { }
+				Pager_object(badge), Rm_member(session),
+				Rm_faulter(this, imprint), _address_space(address_space)
+			{ }
 
 			int pager(Ipc_pager &pager);
 
@@ -358,8 +372,9 @@ namespace Genode {
 			 **************************************/
 
 			Local_addr       attach        (Dataspace_capability, size_t, off_t, bool, Local_addr, bool);
+			void             processed     (State state);
 			void             detach        (Local_addr);
-			Pager_capability add_client    (Thread_capability);
+			Pager_capability add_client    (Thread_capability, unsigned);
 			void             remove_client (Pager_capability);
 			void             fault_handler (Signal_context_capability handler);
 			State            state         ();

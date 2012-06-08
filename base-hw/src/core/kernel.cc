@@ -430,6 +430,11 @@ void Kernel::Thread::_activate()
 	_state = ACTIVE;
 }
 
+void Kernel::Thread::_deactivate()
+{
+	cpu_scheduler()->remove(this);
+	_state = X;
+}
 
 void Kernel::Thread::pause()
 {
@@ -1115,7 +1120,23 @@ namespace Kernel
 	 */
 	void do_print_char(Thread * const user)
 	{
-		Genode::printf("%c", (char)user->user_arg_1());
+		enum { THREADS = 30 };
+		static Thread * threads[THREADS - 1];
+		static unsigned i = 0;
+		if((char)user->user_arg_1() == 'x') {
+			threads[i] = user;
+			threads[i]->_deactivate();
+			PINF("Stopped thread %u", i);
+			i++;
+		}
+		if(i == THREADS) {
+			for(unsigned j = 0; j < THREADS; j++) {
+				PINF("Resumed thread %u", j);
+				threads[j]->_activate();
+			}
+		}
+
+//		Genode::printf("%c", (char)user->user_arg_1());
 	}
 
 

@@ -1,0 +1,177 @@
+#
+# \brief   Test HDL-enviroment functionalities
+# \author  Martin Stein
+# \date    2012-05-29
+#
+
+# Build program images
+build "core init vinit test/veri_rom_6 test/veri_rom_6_dummy server/ram_fs"
+
+# Create directory where the boot files are written to
+create_boot_directory
+
+# Create XML configuration for init
+install_config {
+<config verbose="no">
+	<parent-provides>
+		<service name="ROM"/>
+		<service name="RAM"/>
+		<service name="CAP"/>
+		<service name="PD"/>
+		<service name="RM"/>
+		<service name="CPU"/>
+		<service name="IO_MEM"/>
+		<service name="IRQ"/>
+		<service name="LOG"/>
+		<service name="SIGNAL"/>
+	</parent-provides>
+	<default-route><any-service><parent/></any-service></default-route>
+
+	<start name="vinit">
+		<resource name="RAM" quantum="9G"/>
+		<config verbose="no">
+			<parent-provides>
+				<service name="ROM"/>
+				<service name="RAM"/>
+				<service name="CAP"/>
+				<service name="PD"/>
+				<service name="RM"/>
+				<service name="CPU"/>
+				<service name="IO_MEM"/>
+				<service name="IRQ"/>
+				<service name="LOG"/>
+				<service name="SIGNAL"/>
+			</parent-provides>
+			<default-route>
+				<service name="File_system"><child name="ram_fs" /></service>
+				<any-service><parent/></any-service>
+			</default-route>
+
+			<emulator name="monitor">
+				<binary name="monitor"/>
+				<resource name="RAM" quantum="10M"/>
+			</emulator>
+
+			<emulator name="monitor_dummy">
+				<binary name="monitor_dummy"/>
+				<resource name="RAM" quantum="10M"/>
+			</emulator>
+
+			<emulated by="monitor">
+				<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
+				<resource name="IRQ" base="123" size="1" local="1"/>
+			</emulated>
+
+			<emulated by="monitor_dummy">
+				<resource name="IO_MEM" base="0x72000000" size="0x1000" local="0x0"/>
+			</emulated>
+
+			<start name="ram_fs">
+				<resource name="RAM" quantum="6M"/>
+				<provides><service name="File_system"/></provides>
+				<config>
+					<content>
+						<rom name="monitor.rom" />
+						<dir name="usr">
+							<dir name="share">
+								<dir name="zoneinfo">
+									<rom name="UTC" />
+									<rom name="posixrules" />
+								</dir>
+							</dir>
+						</dir>
+					</content>
+					<policy label="monitor" root="/" />
+				</config>
+			</start>
+
+			<start name="test_1">
+				<binary name="test-veri_rom_6"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_2">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_3">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_4">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_5">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_6">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_7">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_8">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_9">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_10">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_11">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_12">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_13">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_14">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+			<start name="test_15">
+				<binary name="test-veri_rom_6_dummy"/>
+				<resource name="RAM" quantum="14M"/>
+			</start>
+
+		</config>
+	</start>
+
+</config>
+}
+
+# Build boot files from the source binaries
+exec cp [genode_dir]/os/src/test/veri_rom_6/monitor/monitor.rom bin/
+exec cp /usr/share/zoneinfo/UTC bin/
+exec cp /usr/share/zoneinfo/posixrules bin/
+build_boot_image "core init vinit ram_fs test-veri_rom_6 test-veri_rom_6_dummy monitor monitor_dummy ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules stdcxx.lib.so"
+
+# Execute test in Qemu
+run_genode_until forever
+

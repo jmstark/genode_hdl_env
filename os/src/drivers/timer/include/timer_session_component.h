@@ -110,6 +110,7 @@ namespace Timer {
 
 			void sigh(Signal_context_capability sigh) { _sigh = sigh; }
 			void periodic(bool periodic) { _periodic = periodic; }
+			bool periodic() { return _periodic; }
 
 
 			/*********************
@@ -182,10 +183,11 @@ namespace Timer {
 			/**
 			 * Called from the '_trigger' function executed by the server activation
 			 */
-			void schedule_timeout(Genode::Alarm *alarm, Genode::Alarm::Time timeout)
+			void schedule_timeout(Wake_up_alarm *alarm, Genode::Alarm::Time timeout)
 			{
 				Alarm::Time now = _platform_timer->curr_time();
-				schedule_absolute(alarm, now + timeout);
+				if (alarm->periodic()) schedule(alarm, timeout);
+				else schedule_absolute(alarm, now + timeout);
 
 				/* interrupt current 'wait_for_timeout' */
 				_platform_timer->schedule_timeout(0);

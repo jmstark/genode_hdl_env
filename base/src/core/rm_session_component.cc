@@ -313,6 +313,9 @@ void Rm_faulter::fault(Rm_session_component *faulting_rm_session,
 
 	_faulting_rm_session = faulting_rm_session;
 	_fault_state         = fault_state;
+
+	/* sign fault state to enable the RM session client to identify us */
+	_fault_state.imprint = _imprint;
 }
 
 
@@ -338,9 +341,41 @@ void Rm_faulter::continue_after_resolved_fault()
 }
 
 
+void Rm_faulter::continue_after_processed_fault()
+{
+	Lock::Guard lock_guard(_lock);
+	_pager_object->wake_up();
+	_faulting_rm_session = 0;
+	_fault_state = Rm_session::State();
+}
+
+
 /**************************************
  ** Region-manager-session component **
  **************************************/
+
+
+void Rm_session_component::processed(Rm_session_component::State state)
+{
+	/* Serialize access */
+	Lock::Guard lock_guard(_lock);
+
+	/* Check if processed operation concerns any of our faulters */
+	for (Rm_faulter *faulter = _faulters.head(); faulter; )
+	{
+		/* Remember next faulter before possibly removing the current one */
+		Rm_faulter *next = faulter->next();
+
+		/* Reactivate faulter */
+		if (faulter->fault_state().imprint == state.imprint) {
+			_faulters.remove(faulter);
+			faulter->continue_after_processed_fault();
+		}
+		/* Get next faulter */
+		faulter = next;
+	}
+}
+
 
 Rm_session::Local_addr
 Rm_session_component::attach(Dataspace_capability ds_cap, size_t size,
@@ -604,7 +639,7 @@ void Rm_session_component::detach(Local_addr local_addr)
 }
 
 
-Pager_capability Rm_session_component::add_client(Thread_capability thread)
+Pager_capability Rm_session_component::add_client(Thread_capability thread, unsigned imprint)
 {
 	unsigned long badge;
 	Weak_ptr<Address_space> address_space;
@@ -627,7 +662,7 @@ Pager_capability Rm_session_component::add_client(Thread_capability thread)
 	Lock::Guard lock_guard(_lock);
 
 	Rm_client *cl;
-	try { cl = new(&_client_slab) Rm_client(this, badge, address_space); }
+	try { cl = new(&_client_slab) Rm_client(this, badge, address_space, imprint); }
 	catch (Allocator::Out_of_memory) { throw Out_of_metadata(); }
 	catch (Cpu_session::Thread_creation_failed) { throw Out_of_metadata(); }
 	catch (Thread_base::Stack_alloc_failed) { throw Out_of_metadata(); }

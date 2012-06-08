@@ -775,7 +775,7 @@ namespace Kernel
 	               public Irq_owner
 	{
 		enum State { STOPPED, ACTIVE, AWAIT_IPC, AWAIT_RESUMPTION,
-		             AWAIT_IRQ, AWAIT_SIGNAL, KILL_SIGNAL_CONTEXT_BLOCKS };
+		             AWAIT_IRQ, AWAIT_SIGNAL, KILL_SIGNAL_CONTEXT_BLOCKS, X };
 
 		Platform_thread * const _platform_thread; /* userland object wich
 		                                           * addresses this thread */
@@ -789,8 +789,11 @@ namespace Kernel
 		/**
 		 * Resume execution
 		 */
-		void _activate();
+	public:	void _activate();
 
+			void _deactivate();
+
+	private:
 
 		/**************
 		 ** Ipc_node **

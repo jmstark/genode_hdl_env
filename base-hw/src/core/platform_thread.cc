@@ -68,8 +68,6 @@ Platform_thread::Platform_thread(const char * name,
 	_thread_base(thread_base), _stack_size(stack_size),
 	_pd_id(pd_id), _rm_client(0), _virt_utcb(0)
 {
-	strncpy(_name, name, NAME_MAX_LEN);
-
 	/* create UTCB for a core thread */
 	Range_allocator * const ram = platform()->ram_alloc();
 	assert(ram->alloc_aligned(sizeof(Native_utcb), (void **)&_phys_utcb,
@@ -77,7 +75,7 @@ Platform_thread::Platform_thread(const char * name,
 	_virt_utcb = _phys_utcb;
 
 	/* common constructor parts */
-	_init();
+	_init("");
 }
 
 
@@ -87,8 +85,6 @@ Platform_thread::Platform_thread(const char * name, unsigned int priority,
 	_thread_base(0), _stack_size(0), _pd_id(0), _rm_client(0),
 	_virt_utcb((Native_utcb *)utcb)
 {
-	strncpy(_name, name, NAME_MAX_LEN);
-
 	/*
 	 * Allocate UTCB backing store for a thread outside of core. Page alignment
 	 * is done by RAM session by default. It's save to use core env because
@@ -104,7 +100,7 @@ Platform_thread::Platform_thread(const char * name, unsigned int priority,
 	catch (...) { assert(0); }
 
 	/* common constructor parts */
-	_init();
+	_init(name);
 }
 
 
@@ -122,7 +118,7 @@ int Platform_thread::join_pd(unsigned const pd_id, bool const main_thread,
 }
 
 
-void Platform_thread::_init()
+void Platform_thread::_init(const char * name)
 {
 	_id = Kernel::new_thread(_kernel_thread, this);
 	assert(_id);

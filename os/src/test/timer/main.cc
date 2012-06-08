@@ -81,15 +81,51 @@ extern "C" int usleep(unsigned long usec);
 
 int main(int argc, char **argv)
 {
-	printf("--- timer test ---\n");
-
 	static Genode::List<Timer_client> timer_clients;
 	static Timer::Connection main_timer;
 
-	/* check long single timeout */
-	printf("register two-seconds timeout...\n");
-	main_timer.msleep(2000);
-	printf("timeout fired\n");
+	signed min = 0, sec = -1;
+	Signal_receiver sig_rcv;
+	Signal_context sig_cxt;
+	Signal_context_capability sig = sig_rcv.manage(&sig_cxt);
+	main_timer.sigh(sig);
+	main_timer.trigger_periodic(1000*1000);
+
+	printf("--- timer test ---\n");
+	while (1) {
+		Signal s = sig_rcv.wait_for_signal();
+		sec += s.num();
+		if (sec > 59) {
+			unsigned add_min = sec / 60;
+			min += add_min;
+			sec -= add_min * 60;
+			if (min > 59) min = 0;
+		}
+		printf("          %02u:%02u\n", min, sec);
+	}
+
+//	/* check long single timeout */
+//	printf("register two-seconds timeout...\n");
+//	main_timer.msleep(2000);
+//	printf("timeout fired\n");
+
+//	/* check periodic timeouts */
+//	Signal_receiver           sig_rcv;
+//	Signal_context            sig_cxt;
+//	Signal_context_capability sig = sig_rcv.manage(&sig_cxt);
+//	main_timer.sigh(sig);
+//	enum { PTEST_TIME_US = 1000000 };
+//	unsigned period = 500000, periods = PTEST_TIME_US / period, i = 0;
+//	printf("start periodic timeout\n");
+//	for (unsigned j = 0; j < 5; j++) {
+//		main_timer.trigger_periodic(period);
+//		while (i < periods) {
+//			Signal s = sig_rcv.wait_for_signal();
+//			i += s.num();
+//		}
+//		printf("period %6u us, hits %u\n", period, i);
+//		i = 0, period /= 2, periods = PTEST_TIME_US / period;
+//	}
 
 	/* create timer clients with different periods */
 	for (unsigned period_msec = 1; period_msec < 28; period_msec++) {

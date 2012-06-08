@@ -13,7 +13,8 @@ INC_DIR += $(REP_DIR)/src/core/panda
 
 # add C++ sources
 SRC_CC += platform_services.cc \
-          platform_support.cc
+          platform_support.cc \
+          pager_support.cc
 
 # add assembly sources
 SRC_S += mode_transition.s \
@@ -21,6 +22,7 @@ SRC_S += mode_transition.s \
          crt0.s
 
 # declare source paths
+vpath pager_support.cc     $(REP_DIR)/src/core/arm_v7
 vpath platform_support.cc  $(REP_DIR)/src/core/panda
 vpath platform_services.cc $(BASE_DIR)/src/core
 vpath mode_transition.s    $(REP_DIR)/src/core/arm_v7
