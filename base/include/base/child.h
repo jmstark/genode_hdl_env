@@ -100,7 +100,6 @@ namespace Genode {
 		virtual char const *root() const { return ""; }
 	};
 
-
 	/**
 	 * Implementation of the parent interface that supports resource trading
 	 *

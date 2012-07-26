@@ -781,8 +781,9 @@ namespace Kernel
 	/**
 	 * Static mode transition control
 	 */
-	static Mode_transition_control * mtc()
-	{ static Mode_transition_control _object; return &_object; }
+	static Mode_transition_control * mtc() {
+		static Mode_transition_control _object; return &_object; }
+
 
 	/**
 	 * Kernel object that represents a Genode PD

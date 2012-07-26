@@ -22,7 +22,7 @@
 		str r0, [r1]
 
 		/* call _main routine */
-		ldr sp, =_main_stack_high
+		ldr sp, =_stack_high
 		.extern _main
 		bl _main
 		1: b 1b
@@ -35,10 +35,12 @@
 .section .bss
 
 	/* main-thread stack */
-	.align 3
+	.p2align 4
+	.global _stack_low
+	_stack_low:
 	.space 64*1024
-	.global _main_stack_high
-	_main_stack_high:
+	.global _stack_high
+	_stack_high:
 
 	/* main-thread UTCB-pointer for the Genode thread-API */
 	.align 3

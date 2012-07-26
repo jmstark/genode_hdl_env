@@ -55,7 +55,7 @@ namespace Genode {
 		/**
 		 * Common construction part
 		 */
-		void _init();
+		void _init(char const * name);
 
 		/*
 		 * Check if this thread will attach its UTCB by itself
