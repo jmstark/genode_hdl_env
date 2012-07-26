@@ -103,7 +103,6 @@ namespace Genode {
 		virtual Native_pd_args const *pd_args() const { return 0; }
 	};
 
-
 	/**
 	 * Implementation of the parent interface that supports resource trading
 	 *
