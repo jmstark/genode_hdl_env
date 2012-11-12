@@ -234,7 +234,7 @@ namespace Init
 					cpu_session->state(thread_cap);
 
 				/* find dataspace that covers the IP of the RM client */
-				addr_t const ip = client_state->instruction_ptr();
+				addr_t const ip = client_state->ip;
 				addr_t off;
 				Rm_session_component * const rm = rm_client->session();
 				Region * const region = rm->_find_region((void *)ip, &off);
@@ -274,8 +274,7 @@ namespace Init
 				}
 
 				/* increase IP of the client to the next instruction */
-				client_state->instruction_ptr(client_state->instruction_ptr() +
-				                              Instruction::size());
+				client_state->ip += Instruction::size();
 
 				/* apply the new client state to the related thread */
 				Thread_capability thread = rm_client->thread();

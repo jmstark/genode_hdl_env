@@ -90,7 +90,7 @@ install_config {
 exec cp [genode_dir]/os/src/test/verilator_env/monitor/monitor.rom bin/
 exec cp /usr/share/zoneinfo/UTC bin/
 exec cp /usr/share/zoneinfo/posixrules bin/
-build_boot_image "core init vinit ram_fs test-verilator_env monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules"
+build_boot_image "core init vinit ram_fs test-verilator_env monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules stdcxx.lib.so"
 
 # Execute test in Qemu
 run_genode_until forever

@@ -63,7 +63,8 @@ namespace Init
 					{
 						if (object_id == id()) return this;
 
-						Entry * const subtree = child(object_id > id());
+						Entry * const subtree =
+							this->Genode::Avl_node<Entry>::child(object_id > id());
 
 						return subtree ? subtree->find(object_id) : 0;
 					}
