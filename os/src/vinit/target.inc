@@ -11,7 +11,7 @@ TARGET = vinit
 SRC_CC += main.cc
 
 # add library dependencies
-LIBS += env cxx server process signal
+LIBS += env cxx server signal child
 
 # add include paths
 INC_DIR += $(GENERIC_PRG_DIR)/include/

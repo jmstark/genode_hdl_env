@@ -33,8 +33,8 @@ int main(int argc, char **argv)
 	printf("Lese 0x0: %x\n", a[0]);
 	printf("Lese 0x4: %x\n", a[1]);
 	printf("Lese 0x8: %x\n", a[2]);
-	printf("Lese 0x10: %x\n", a[2]);
-	printf("Lese 0x14: %x\n", a[2]);
+	printf("Lese 0x10: %x\n", a[4]);
+	printf("Lese 0x20: %x\n", a[8]);
 	while(1);
 }
 

@@ -70,11 +70,6 @@ namespace Init
 			void kill_thread(Thread_capability thread)
 			{ _parent_session.kill_thread(thread); }
 
-			Thread_capability first() { return _parent_session.first(); }
-
-			Thread_capability next(Thread_capability curr)
-			{ return _parent_session.next(curr); }
-
 			int set_pager(Thread_capability thread, Pager_capability  pager)
 			{ return _parent_session.set_pager(thread, pager); }
 
@@ -102,6 +97,12 @@ namespace Init
 
 			void single_step(Thread_capability thread, bool enable)
 			{ return _parent_session.single_step(thread, enable); }
+
+			unsigned int num_cpus() const {
+				return _parent_session.num_cpus(); }
+
+			void affinity(Thread_capability t, unsigned int cpu) {
+				_parent_session.affinity(t, cpu); }
 	};
 }
 

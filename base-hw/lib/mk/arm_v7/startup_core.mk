@@ -18,12 +18,14 @@ INC_DIR += $(BASE_DIR)/src/core/include/
 # If not use a dummy boot-modules file wich includes only the symbols.
 #
 ifeq ($(wildcard $(BUILD_BASE_DIR)/boot_modules.s),)
-vpath boot_modules.s $(REP_DIR)/src/core/arm_v7a
+vpath boot_modules.s $(REP_DIR)/src/core/arm
 else
 INC_DIR += $(BUILD_BASE_DIR)
 vpath boot_modules.s $(BUILD_BASE_DIR)
 endif
 
 # declare remaining source paths
-vpath syscall.cc $(REP_DIR)/src/base/arm_v7a
-vpath %          $(REP_DIR)/src/core/arm_v7a
+vpath syscall.cc        $(REP_DIR)/src/base/arm_v7a
+vpath pager_support.cc  $(REP_DIR)/src/core/arm_v7
+vpath mode_transition.s $(REP_DIR)/src/core/arm_v7
+vpath crt0.s            $(REP_DIR)/src/core/arm

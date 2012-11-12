@@ -275,9 +275,9 @@ namespace Init
 						if (!regions) assert(0);
 
 						/* remember the resource region */
-						addr_t base;
-						size_t size;
-						addr_t local;
+						addr_t base = 0;
+						size_t size = 0;
+						addr_t local = 0;
 						resource.attribute("base").value(&base);
 						resource.attribute("size").value(&size);
 						resource.attribute("local").value(&local);
