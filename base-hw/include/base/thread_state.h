@@ -19,7 +19,7 @@
 
 namespace Genode
 {
-	struct Thread_state : public Cpu_context { };
+	struct Thread_state : public Thread_state_base { };
 }
 
 #endif /* _INCLUDE__BASE__THREAD_STATE_H_ */

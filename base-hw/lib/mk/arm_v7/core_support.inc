@@ -5,6 +5,7 @@
 #
 
 # add assembly sources
+SRC_S += pager_support.cc
 SRC_S += mode_transition.s
 
 # declare source paths
