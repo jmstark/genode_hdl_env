@@ -161,6 +161,12 @@ namespace Genode
 				return ms * TICS_PER_MS; }
 
 			/**
+			 * Translate native timer value to milliseconds
+			 */
+			static float tics_to_ms(unsigned const tics) {
+				return (float)tics / TICS_PER_MS; }
+
+			/**
 			 * Translate native timer value to microseconds
 			 */
 			static unsigned long tics_to_us(unsigned long const tics) {
