@@ -5,11 +5,14 @@
 #
 
 # Set program name
-TARGET = test-verilator_env
+TARGET = test-veri_rom_1_2
 
 # Add C++ sources
 SRC_CC += main.cc
 
 # Add libraries
 LIBS += cxx env
+
+# decalre source paths
+vpath % $(GEN_DIR)
 

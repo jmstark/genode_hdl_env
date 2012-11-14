@@ -38,6 +38,9 @@ namespace Wishbone_slave
 	uint8_t  & rty_o() { static uint8_t dummy = 0; return dummy; };
 	uint32_t & dat_o() { return design()->wb_dat_o; };
 
-	void evaluate_design() { design()->eval(); };
+	void evaluate_design() {
+		design()->write_lock = 1;
+		design()->eval();
+	};
 }
 
