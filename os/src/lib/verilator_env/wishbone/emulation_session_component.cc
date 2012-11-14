@@ -24,7 +24,10 @@
 using namespace Wishbone_slave;
 using namespace Genode;
 
-enum { MAX_SLAVE_CYCLES = 1000 };
+enum {
+	MAX_SLAVE_CYCLES = 1000,
+	VERBOSE = 0,
+};
 
 
 /***********************
@@ -54,6 +57,7 @@ static void cycle()
 	clk_i() = 1;
 	evaluate();
 }
+
 
 /**
  * Do a reset cycle at a wishbone slave
@@ -105,7 +109,7 @@ umword_t Emulation::Session_component::read_mmio(addr_t const addr, Access const
 		{
 			/* buffer read value */
 			umword_t const result = dat_o();
-			Genode::printf("READ %lx %lx\n", addr, result);
+			if (VERBOSE) Genode::printf("wishbone read %lx %lx\n", addr, result);
 
 			/* do a transfer-end cycle */
 			/* FIXME might be unnecessary */
@@ -149,7 +153,8 @@ Emulation::Session_component::write_mmio(addr_t const addr, Access const a,
 	while (1) {
 		if (ack_o())
 		{
-			Genode::printf("WRITE %lx %x\n", addr, dat_o());
+			if (VERBOSE) Genode::printf("wishbone write %lx %x\n", addr, dat_i());
+//			for (unsigned volatile i = 0; i<400*1000; i++) ;
 
 			/* do a transfer-end cycle */
 			/* FIXME might be unnecessary */
@@ -167,6 +172,7 @@ Emulation::Session_component::write_mmio(addr_t const addr, Access const a,
 		cycle();
 	}
 }
+
 
 bool Emulation::Session_component::irq_handler(unsigned const,
                                                Signal_context_capability)
