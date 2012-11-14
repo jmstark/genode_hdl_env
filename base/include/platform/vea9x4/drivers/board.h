@@ -49,9 +49,11 @@ namespace Genode
 
 			/* timer/counter */
 			SP804_0_1_MMIO_BASE = MMIO_0_BASE + 0x11000,
-			SP804_0_1_MMIO_SIZE = 0x1000,
-			SP804_0_1_CLOCK = 1000*1000,
+			SP804_2_3_MMIO_BASE = MMIO_0_BASE + 0x12000,
 			SP804_0_1_IRQ = 34,
+			SP804_2_3_IRQ = 35,
+			SP804_MMIO_SIZE = 0x1000,
+			SP804_CLOCK = 1000*1000,
 
 			/* clocks */
 			TCREF_CLOCK = 66670*1000,

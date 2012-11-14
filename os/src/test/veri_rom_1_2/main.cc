@@ -194,7 +194,7 @@ void test(off_t const init_o)
 {
 	enum { ROM_0_BASE = 0x71000000 };
 
-	static Watch watch;
+	static Watch watch(0);
 	static Test_rom rom_0(ROM_0_BASE, &watch);
 	unsigned v1, v2;
 	bool protect;

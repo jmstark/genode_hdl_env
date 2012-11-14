@@ -19,6 +19,8 @@ using namespace Genode;
 
 struct Test_watch : Watch
 {
+	Test_watch(unsigned const id) : Watch(id) { }
+
 	unsigned test(unsigned const factor)
 	{
 		unsigned const count = factor * 200*1000;
@@ -51,7 +53,7 @@ int main()
 {
 	printf("--- watch test started ---\n");
 	enum { TESTS = 8, TESTS_PER_TEST = 15, F = 1000 };
-	static Test_watch watch;
+	static Test_watch watch(0);
 	unsigned min, avg, max, factor = 10;
 
 	watch.deviation_ms(factor, TESTS_PER_TEST, min, avg, max);

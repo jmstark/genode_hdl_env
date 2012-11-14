@@ -21,6 +21,8 @@ namespace Genode
 {
 	struct Watch : Watch_base
 	{
+		Watch(unsigned const id) : Watch_base(id) { }
+
 		void start()
 		{
 			Timer::run_and_wrap(Timer::max_value());
