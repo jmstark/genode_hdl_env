@@ -1,11 +1,11 @@
 #
-# \brief   Test MMIO and register framework functionalities
+# \brief   Test HDL-enviroment functionalities
 # \author  Martin Stein
 # \date    2012-05-29
 #
 
 # Build program images
-build "core init vinit test/verilator_env server/ram_fs"
+build "core init vinit test/veri_rom_1_2 server/ram_fs"
 
 # Create directory where the boot files are written to
 create_boot_directory
@@ -75,8 +75,8 @@ install_config {
 				</config>
 			</start>
 
-			<start name="test_1">
-				<binary name="test-verilator_env"/>
+			<start name="test">
+				<binary name="test-veri_rom_1_2"/>
 				<resource name="RAM" quantum="5M"/>
 			</start>
 
@@ -87,10 +87,10 @@ install_config {
 }
 
 # Build boot files from the source binaries
-exec cp [genode_dir]/os/src/test/verilator_env/monitor/monitor.rom bin/
+exec cp [genode_dir]/os/src/test/veri_rom_1_2/monitor/monitor.rom bin/
 exec cp /usr/share/zoneinfo/UTC bin/
 exec cp /usr/share/zoneinfo/posixrules bin/
-build_boot_image "core init vinit ram_fs test-verilator_env monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules stdcxx.lib.so"
+build_boot_image "core init vinit ram_fs test-veri_rom_1_2 monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules stdcxx.lib.so"
 
 # Execute test in Qemu
 run_genode_until forever
