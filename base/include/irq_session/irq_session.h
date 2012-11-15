@@ -43,14 +43,14 @@ namespace Genode {
 
 		virtual ~Irq_session() { }
 
-		virtual void wait_for_irq() = 0;
+		virtual void wait_for_irq(Dataspace_capability) = 0;
 
 
 		/*********************
 		 ** RPC declaration **
 		 *********************/
 
-		GENODE_RPC(Rpc_wait_for_irq, void, wait_for_irq);
+		GENODE_RPC(Rpc_wait_for_irq, void, wait_for_irq, Dataspace_capability);
 		GENODE_RPC_INTERFACE(Rpc_wait_for_irq);
 	};
 }

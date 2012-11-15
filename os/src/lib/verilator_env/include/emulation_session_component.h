@@ -42,7 +42,7 @@ namespace Emulation
 
 			umword_t read_mmio(addr_t const, Access const);
 
-			bool irq_handler(unsigned const, Signal_context_capability);
+			bool irq_handler(unsigned const, Signal_context_capability, Dataspace_capability);
 	};
 }
 

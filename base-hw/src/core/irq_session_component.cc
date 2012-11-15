@@ -25,7 +25,7 @@ Irq_session_component::Irq_control_component::associate_to_irq(unsigned irq)
 { return Kernel::allocate_irq(irq); }
 
 
-void Irq_session_component::wait_for_irq() { Kernel::await_irq(); }
+void Irq_session_component::wait_for_irq(Dataspace_capability) { Kernel::await_irq(); }
 
 
 Irq_session_component::~Irq_session_component()
