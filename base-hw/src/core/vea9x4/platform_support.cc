@@ -39,7 +39,8 @@ Native_region * Platform::_irq_regions(unsigned const i)
 {
 	static Native_region _regions[] =
 	{
-		{ 0, Cortex_a9_no_trustzone::Pic::MAX_INTERRUPT_ID + 1 }
+		{ Board::SP804_0_1_IRQ, 1 },
+		{ Board::SP804_2_3_IRQ, 1 }
 	};
 	return i < sizeof(_regions)/sizeof(_regions[0]) ? &_regions[i] : 0;
 }

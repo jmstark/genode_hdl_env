@@ -47,8 +47,8 @@ namespace Emulation
 		{ return call<Rpc_read_mmio>(o, a); }
 
 		bool irq_handler(unsigned const irq,
-		                 Signal_context_capability irq_edge)
-		{ return call<Rpc_irq_handler>(irq, irq_edge); }
+		                 Signal_context_capability irq_edge, Dataspace_capability ds)
+		{ return call<Rpc_irq_handler>(irq, irq_edge, ds); }
 	};
 }
 

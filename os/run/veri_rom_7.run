@@ -1,0 +1,149 @@
+#
+# \brief   Test HDL-enviroment functionalities
+# \author  Martin Stein
+# \date    2012-05-29
+#
+
+# Build program images
+build "core init vinit test/veri_rom_7 server/ram_fs"
+
+# Create directory where the boot files are written to
+create_boot_directory
+
+# Create XML configuration for init
+install_config {
+<config verbose="no">
+	<parent-provides>
+		<service name="ROM"/>
+		<service name="RAM"/>
+		<service name="CAP"/>
+		<service name="PD"/>
+		<service name="RM"/>
+		<service name="CPU"/>
+		<service name="IO_MEM"/>
+		<service name="IRQ"/>
+		<service name="LOG"/>
+		<service name="SIGNAL"/>
+	</parent-provides>
+	<default-route><any-service><parent/></any-service></default-route>
+
+	<start name="vinit">
+		<resource name="RAM" quantum="200M"/>
+		<config verbose="no">
+			<parent-provides>
+				<service name="ROM"/>
+				<service name="RAM"/>
+				<service name="CAP"/>
+				<service name="PD"/>
+				<service name="RM"/>
+				<service name="CPU"/>
+				<service name="IO_MEM"/>
+				<service name="IRQ"/>
+				<service name="LOG"/>
+				<service name="SIGNAL"/>
+			</parent-provides>
+			<default-route>
+				<service name="File_system"><child name="ram_fs" /></service>
+				<any-service><parent/></any-service>
+			</default-route>
+
+			<emulator name="monitor">
+				<binary name="monitor"/>
+				<resource name="RAM" quantum="5M"/>
+			</emulator>
+
+			<emulated by="monitor">
+				<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
+				<resource name="IRQ" base="101" size="1" local="1"/>
+				<resource name="IRQ" base="102" size="1" local="2"/>
+				<resource name="IRQ" base="103" size="1" local="3"/>
+				<resource name="IRQ" base="104" size="1" local="4"/>
+				<resource name="IRQ" base="105" size="1" local="5"/>
+				<resource name="IRQ" base="106" size="1" local="6"/>
+				<resource name="IRQ" base="107" size="1" local="7"/>
+				<resource name="IRQ" base="108" size="1" local="8"/>
+				<resource name="IRQ" base="109" size="1" local="9"/>
+				<resource name="IRQ" base="110" size="1" local="10"/>
+				<resource name="IRQ" base="111" size="1" local="11"/>
+				<resource name="IRQ" base="112" size="1" local="12"/>
+				<resource name="IRQ" base="113" size="1" local="13"/>
+				<resource name="IRQ" base="114" size="1" local="14"/>
+				<resource name="IRQ" base="115" size="1" local="15"/>
+				<resource name="IRQ" base="116" size="1" local="16"/>
+				<resource name="IRQ" base="117" size="1" local="17"/>
+				<resource name="IRQ" base="118" size="1" local="18"/>
+				<resource name="IRQ" base="119" size="1" local="19"/>
+				<resource name="IRQ" base="120" size="1" local="20"/>
+				<resource name="IRQ" base="121" size="1" local="21"/>
+				<resource name="IRQ" base="122" size="1" local="22"/>
+				<resource name="IRQ" base="123" size="1" local="23"/>
+				<resource name="IRQ" base="124" size="1" local="24"/>
+				<resource name="IRQ" base="125" size="1" local="25"/>
+				<resource name="IRQ" base="126" size="1" local="26"/>
+				<resource name="IRQ" base="127" size="1" local="27"/>
+				<resource name="IRQ" base="128" size="1" local="28"/>
+				<resource name="IRQ" base="129" size="1" local="29"/>
+				<resource name="IRQ" base="130" size="1" local="30"/>
+				<resource name="IRQ" base="131" size="1" local="31"/>
+				<resource name="IRQ" base="132" size="1" local="32"/>
+				<resource name="IRQ" base="133" size="1" local="33"/>
+				<resource name="IRQ" base="134" size="1" local="34"/>
+				<resource name="IRQ" base="135" size="1" local="35"/>
+				<resource name="IRQ" base="136" size="1" local="36"/>
+				<resource name="IRQ" base="137" size="1" local="37"/>
+				<resource name="IRQ" base="138" size="1" local="38"/>
+				<resource name="IRQ" base="139" size="1" local="39"/>
+				<resource name="IRQ" base="140" size="1" local="40"/>
+				<resource name="IRQ" base="141" size="1" local="41"/>
+				<resource name="IRQ" base="142" size="1" local="42"/>
+				<resource name="IRQ" base="143" size="1" local="43"/>
+				<resource name="IRQ" base="144" size="1" local="44"/>
+				<resource name="IRQ" base="145" size="1" local="45"/>
+				<resource name="IRQ" base="146" size="1" local="46"/>
+				<resource name="IRQ" base="147" size="1" local="47"/>
+				<resource name="IRQ" base="148" size="1" local="48"/>
+				<resource name="IRQ" base="149" size="1" local="49"/>
+				<resource name="IRQ" base="150" size="1" local="50"/>
+				<resource name="IRQ" base="151" size="1" local="51"/>
+				<resource name="IRQ" base="152" size="1" local="52"/>
+			</emulated>
+
+			<start name="ram_fs">
+				<resource name="RAM" quantum="5M"/>
+				<provides><service name="File_system"/></provides>
+				<config>
+					<content>
+						<rom name="monitor.rom" />
+						<dir name="usr">
+							<dir name="share">
+								<dir name="zoneinfo">
+									<rom name="UTC" />
+									<rom name="posixrules" />
+								</dir>
+							</dir>
+						</dir>
+					</content>
+					<policy label="monitor" root="/" />
+				</config>
+			</start>
+
+			<start name="test">
+				<binary name="test-veri_rom_7"/>
+				<resource name="RAM" quantum="20M"/>
+			</start>
+
+		</config>
+	</start>
+
+</config>
+}
+
+# Build boot files from the source binaries
+exec cp [genode_dir]/os/src/test/veri_rom_7/monitor/monitor.rom bin/
+exec cp /usr/share/zoneinfo/UTC bin/
+exec cp /usr/share/zoneinfo/posixrules bin/
+build_boot_image "core init vinit ram_fs test-veri_rom_7 monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules stdcxx.lib.so"
+
+# Execute test in Qemu
+run_genode_until forever
+
