@@ -332,17 +332,10 @@ void Rm_faulter::continue_after_resolved_fault()
 }
 
 
-void Rm_faulter::continue_after_processed_fault(unsigned const read)
+void Rm_faulter::continue_after_processed_fault()
 {
-	/* Serialize access */
-	using namespace Genode;
 	Lock::Guard lock_guard(_lock);
-
-	/* Update and continue faulter */
-	_pager_object->instruction_processed(_fault_state.instr, read);
 	_pager_object->wake_up();
-
-	/* Reset RM session */
 	_faulting_rm_session = 0;
 	_fault_state = Rm_session::State();
 }
@@ -365,10 +358,9 @@ void Rm_session_component::processed(Rm_session_component::State state)
 		Rm_faulter *next = faulter->next();
 
 		/* Reactivate faulter */
-		if (faulter->fault_state()==state) {
-
+		if (faulter->fault_state().imprint == state.imprint) {
 			_faulters.remove(faulter);
-			faulter->continue_after_processed_fault(state.value);
+			faulter->continue_after_processed_fault();
 		}
 		/* Get next faulter */
 		faulter = next;

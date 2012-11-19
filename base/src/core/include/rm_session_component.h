@@ -172,11 +172,8 @@ namespace Genode {
 
 			/**
 			 * Continue faulter after its faulting instruction has been emulated
-			 *
-			 * \param read  If the instruction had implied a memory
-			 *              read access, this contains the read value
 			 */
-			void continue_after_processed_fault(unsigned const read);
+			void continue_after_processed_fault();
 	};
 
 

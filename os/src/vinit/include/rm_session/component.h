@@ -216,6 +216,8 @@ namespace Init
 			{
 				/* get the classic RM state */
 				Rm_session::State state = _parent_rm.state();
+				if (state.type != Rm_session::READ_FAULT &&
+				    state.type != Rm_session::WRITE_FAULT) return state;
 
 				/* get related RM client through the RM-state imprint */
 				Rm_client * const rm_client = Rm_client::by_id(state.imprint);
@@ -287,9 +289,7 @@ namespace Init
 				/* forget fault state of the client */
 				rm_client->state(0);
 				destroy(_md_alloc, client_state);
-
-				/* let client continue */
-				cpu_client->session()->resume(thread);
+				_parent_rm.processed(state);
 			}
 
 			/****************
