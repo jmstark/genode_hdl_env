@@ -49,8 +49,9 @@ namespace Init
 				_rm(rm), _sig_recvr(sr), _emu(emu), _io_mem_base(io_mem_base)
 			{ }
 
+
 			/**
-			 * Process one pending fault
+			 * Process pending faults
 			 */
 			void handle_fault()
 			{
@@ -58,7 +59,7 @@ namespace Init
 				using namespace Genode;
 				Rm_session::State s = _rm->state();
 				if (s.type == Rm_session::READY) {
-					PWRN("Ignoring spurious fault signal");
+					PDBG("Spurious fault signal");
 					return;
 				}
 				/* emulate instruction through our emulator */
