@@ -1,0 +1,33 @@
+
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+    google.load("visualization", "1.0", {packages:["imagechart"]});
+    </script>
+    <script type='text/javascript'>
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('string');
+        dataTable.addColumn('number');
+        dataTable.addColumn('string');
+
+        // Row data is [data point, data point, point label]
+        dataTable.addRows([
+        [10,40,undefined],
+        [20,60,'Initial recall'],
+        [30,60,'Product withdrawn']
+        ]);
+
+        var options = {cht: 'lc', chds:'0,160', annotationColumns:[{column:2, size:12, type:'flag', priority:'high'},]};
+
+        var chart = new google.visualization.ImageChart(document.getElementById('line_div'));
+        chart.draw(dataTable, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id='line_div'></div>
+  </body>
+</html>
