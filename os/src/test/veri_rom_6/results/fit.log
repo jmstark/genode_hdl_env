@@ -1,0 +1,4200 @@
+
+
+*******************************************************************************
+Tue Nov 20 11:52:28 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 34.0000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4299.66           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 25.5147
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+c               = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.718704
+rel. change during last iteration : -7.56377e-07
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.379132
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.143741
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 3.63946          +/- 0.8101       (22.26%)
+b               = 2.19437          +/- 0.327        (14.9%)
+c               = 0.269124         +/- 0.02925      (10.87%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.959  1.000 
+c               0.903 -0.984  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:52:28 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 34.0000]
+        #datapoints = 8
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 0.721624          delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 25.5147
+
+initial set of free parameter values
+
+a               = 3.63946
+b               = 2.19437
+c               = 0.269124
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.721623
+rel. change during last iteration : -1.15822e-06
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.379901
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.144325
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 3.63946          +/- 0.8117       (22.3%)
+b               = 2.19436          +/- 0.3277       (14.93%)
+c               = 0.269132         +/- 0.02931      (10.89%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.959  1.000 
+c               0.903 -0.984  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:55:33 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.98229           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 3.63946
+b               = 2.19436
+c               = 0.269132
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.23442e-07
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8189       (18.98%)
+b               = 1.86033          +/- 0.3044       (16.36%)
+c               = 0.303209         +/- 0.02493      (8.22%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:55:33 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86033
+c               = 0.303209
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.66733e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8186       (18.97%)
+b               = 1.86034          +/- 0.3043       (16.36%)
+c               = 0.303201         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:57:03 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86034
+c               = 0.303201
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50049e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8189       (18.98%)
+b               = 1.86034          +/- 0.3044       (16.36%)
+c               = 0.303208         +/- 0.02493      (8.22%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:57:03 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86034
+c               = 0.303208
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.55531e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8186       (18.97%)
+b               = 1.86034          +/- 0.3043       (16.36%)
+c               = 0.3032           +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:57:20 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86034
+c               = 0.3032
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50443e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8189       (18.98%)
+b               = 1.86034          +/- 0.3044       (16.36%)
+c               = 0.303208         +/- 0.02493      (8.22%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:57:20 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86034
+c               = 0.303208
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.55276e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8186       (18.97%)
+b               = 1.86035          +/- 0.3043       (16.36%)
+c               = 0.303199         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:58:13 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86035
+c               = 0.303199
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50458e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8189       (18.98%)
+b               = 1.86035          +/- 0.3044       (16.36%)
+c               = 0.303207         +/- 0.02493      (8.221%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:58:13 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86035
+c               = 0.303207
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.55052e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8186       (18.97%)
+b               = 1.86035          +/- 0.3043       (16.36%)
+c               = 0.303199         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:58:33 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86035
+c               = 0.303199
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50478e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31434          +/- 0.8189       (18.98%)
+b               = 1.86035          +/- 0.3044       (16.36%)
+c               = 0.303207         +/- 0.02493      (8.221%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:58:33 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31434
+b               = 1.86035
+c               = 0.303207
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.54846e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8186       (18.97%)
+b               = 1.86036          +/- 0.3043       (16.36%)
+c               = 0.303198         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:59:24 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86036
+c               = 0.303198
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50502e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8189       (18.98%)
+b               = 1.86036          +/- 0.3044       (16.36%)
+c               = 0.303206         +/- 0.02493      (8.221%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:59:24 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86036
+c               = 0.303206
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.54654e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8186       (18.97%)
+b               = 1.86036          +/- 0.3043       (16.36%)
+c               = 0.303198         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:59:42 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86036
+c               = 0.303198
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50528e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8189       (18.98%)
+b               = 1.86036          +/- 0.3044       (16.36%)
+c               = 0.303206         +/- 0.02493      (8.221%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 11:59:42 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86036
+c               = 0.303206
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.54477e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8186       (18.97%)
+b               = 1.86036          +/- 0.3043       (16.36%)
+c               = 0.303197         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:00:09 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.1481            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86036
+c               = 0.303197
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.1481
+rel. change during last iteration : -1.50558e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437436
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.19135
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8189       (18.98%)
+b               = 1.86037          +/- 0.3044       (16.36%)
+c               = 0.303205         +/- 0.02493      (8.221%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:00:09 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.14731           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 30.8671
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86037
+c               = 0.303205
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.14731
+rel. change during last iteration : -1.54312e-06
+
+degrees of freedom    (FIT_NDF)                        : 6
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.437286
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.191219
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.31435          +/- 0.8186       (18.97%)
+b               = 1.86037          +/- 0.3043       (16.36%)
+c               = 0.303197         +/- 0.02492      (8.218%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.954  1.000 
+c               0.893 -0.983  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:16:45 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.2501            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.31435
+b               = 1.86037
+c               = 0.303197
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.12577e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4843       (12.03%)
+b               = 1.95759          +/- 0.2023       (10.33%)
+c               = 0.295952         +/- 0.01792      (6.055%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:16:45 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.95759
+c               = 0.295952
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.6222e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4841       (12.02%)
+b               = 1.95759          +/- 0.2022       (10.33%)
+c               = 0.295943         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:19:36 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.95759
+c               = 0.295943
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.45542e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4843       (12.03%)
+b               = 1.9576           +/- 0.2023       (10.33%)
+c               = 0.29595          +/- 0.01792      (6.055%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:19:36 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.9576
+c               = 0.29595
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.52265e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4841       (12.02%)
+b               = 1.9576           +/- 0.2022       (10.33%)
+c               = 0.295942         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:20:40 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.9576
+c               = 0.295942
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.45863e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4843       (12.03%)
+b               = 1.9576           +/- 0.2023       (10.33%)
+c               = 0.29595          +/- 0.01792      (6.055%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:20:40 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.9576
+c               = 0.29595
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.51903e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4841       (12.02%)
+b               = 1.95761          +/- 0.2022       (10.33%)
+c               = 0.295941         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:20:58 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.95761
+c               = 0.295941
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.45889e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4843       (12.03%)
+b               = 1.95761          +/- 0.2023       (10.33%)
+c               = 0.295949         +/- 0.01792      (6.055%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:20:58 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.95761
+c               = 0.295949
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.51582e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4841       (12.02%)
+b               = 1.95761          +/- 0.2022       (10.33%)
+c               = 0.29594          +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:24:41 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.95761
+c               = 0.29594
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.45922e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4843       (12.03%)
+b               = 1.95761          +/- 0.2023       (10.33%)
+c               = 0.295948         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:24:41 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02693
+b               = 1.95761
+c               = 0.295948
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.51288e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95762          +/- 0.2022       (10.33%)
+c               = 0.29594          +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:24:50 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95762
+c               = 0.29594
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.4596e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95762          +/- 0.2023       (10.33%)
+c               = 0.295948         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:24:50 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95762
+c               = 0.295948
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.5102e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95762          +/- 0.2022       (10.33%)
+c               = 0.295939         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:25:52 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95762
+c               = 0.295939
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46004e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95762          +/- 0.2023       (10.33%)
+c               = 0.295947         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:25:52 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95762
+c               = 0.295947
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.50773e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95763          +/- 0.2022       (10.33%)
+c               = 0.295939         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:26:23 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295939
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.4605e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95763          +/- 0.2023       (10.33%)
+c               = 0.295947         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:26:23 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295947
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.50548e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95763          +/- 0.2022       (10.33%)
+c               = 0.295938         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:26:46 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295938
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.461e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95763          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:26:46 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295946
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.5034e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95763          +/- 0.2022       (10.33%)
+c               = 0.295938         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:27:59 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295938
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.4615e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95763          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:27:59 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295946
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.5015e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95764          +/- 0.2022       (10.33%)
+c               = 0.295937         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:29:17 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295937
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46202e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:29:17 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.49975e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95764          +/- 0.2022       (10.33%)
+c               = 0.295937         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:29:40 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295937
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46255e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:29:40 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.49814e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95764          +/- 0.2022       (10.33%)
+c               = 0.295936         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:30:28 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295936
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46308e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:30:28 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.49665e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95765          +/- 0.2022       (10.33%)
+c               = 0.295936         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:31:41 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295936
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.4636e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:31:41 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.49528e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95765          +/- 0.2022       (10.33%)
+c               = 0.295936         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:32:06 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295936
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46412e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:32:06 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.49402e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95765          +/- 0.2022       (10.33%)
+c               = 0.295935         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:32:49 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295935
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46463e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295943         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:32:49 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295943
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.49286e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16941
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4841       (12.02%)
+b               = 1.95766          +/- 0.2022       (10.33%)
+c               = 0.295935         +/- 0.01791      (6.053%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:33:29 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95766
+c               = 0.295935
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -1.46513e-06
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95766          +/- 0.2023       (10.33%)
+c               = 0.295943         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:33:29 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7602.32           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 1
+e               = 1
+f               = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -7.3581e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:33:49 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95766
+c               = 0.295943
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -7.84637e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:33:49 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -1.87243e-16
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:34:23 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -5.94782e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:34:23 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:34:48 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -5.58957e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:34:48 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:09 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -5.2543e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295944         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:09 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:32 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295944
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -4.93914e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95765          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:32 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:43 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95765
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -4.64289e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:43 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:55 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -4.36439e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:35:55 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:09 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -4.10263e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:09 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:20 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -3.85655e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:20 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:39 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -3.62522e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295945         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:39 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:48 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295945
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -3.40778e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:36:48 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:37:34 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295946
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -3.20338e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95764          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:37:34 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:38:38 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95764
+c               = 0.295946
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -3.01124e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95763          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:38:38 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:46:08 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295946
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -2.83062e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95763          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:46:08 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:46:26 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18704           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 4.02694
+b               = 1.95763
+c               = 0.295946
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -2.66084e-09
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02694          +/- 0.4843       (12.03%)
+b               = 1.95763          +/- 0.2023       (10.33%)
+c               = 0.295946         +/- 0.01792      (6.056%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 12:46:26 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1.18587           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 0.295897
+e               = 1.95804
+f               = 4.02636
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 13:13:47 2012
+
+
+FIT:    data read from 'avg_read_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: r(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7602.06           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+a               = 1
+b               = 1
+c               = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.18704
+rel. change during last iteration : -7.355e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411797
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169577
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+a               = 4.02693          +/- 0.4843       (12.03%)
+b               = 1.95759          +/- 0.2023       (10.33%)
+c               = 0.295952         +/- 0.01792      (6.055%)
+
+
+correlation matrix of the fit parameters:
+
+               a      b      c      
+a               1.000 
+b              -0.909  1.000 
+c               0.814 -0.975  1.000 
+
+
+*******************************************************************************
+Tue Nov 20 13:13:47 2012
+
+
+FIT:    data read from 'avg_write_lat.txt'
+        format = z
+	y range restricted to [0.00000 : 11.0000]
+        #datapoints = 10
+        residuals are weighted equally (unit weight)
+
+function used for fitting: w(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7602.32           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 29.2848
+
+initial set of free parameter values
+
+d               = 1
+e               = 1
+f               = 1
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 1.18587
+rel. change during last iteration : -7.3581e-08
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.411594
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.169409
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+d               = 0.295897         +/- 0.01791      (6.054%)
+e               = 1.95804          +/- 0.2022       (10.33%)
+f               = 4.02636          +/- 0.4841       (12.02%)
+
+
+correlation matrix of the fit parameters:
+
+               d      e      f      
+d               1.000 
+e              -0.975  1.000 
+f               0.814 -0.909  1.000 

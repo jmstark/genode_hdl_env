@@ -58,7 +58,7 @@ void Rm_client::unmap(addr_t core_local_base, addr_t virt_base, size_t size)
 		 *        occured initially with the entrypoint threads of two
 		 *        childs that started simultanously.
 		 */
-		PWRN("%s:%d: Unmap regards thread that is not bind to PD", __FILE__, __LINE__);
+//		PWRN("%s:%d: Unmap regards thread that is not bind to PD", __FILE__, __LINE__);
 	}
 }
 
