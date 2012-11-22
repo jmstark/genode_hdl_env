@@ -129,14 +129,14 @@ namespace Init
 			 ** Irq_session interface **
 			 ***************************/
 
-			void wait_for_irq()
+			void wait_for_irq(Dataspace_capability ds)
 			{
 				/* start listening to the IRQ state of the emulator */
-				bool irq_state = _emulation->irq_handler(_irq, _irq_edge_cap);
+				bool irq_state = _emulation->irq_handler(_irq, _irq_edge_cap, ds);
 				if (!irq_state) _irq_receiver.wait_for_signal();
 
 				/* stop listening to the IRQ state of the emulator */
-				_emulation->irq_handler(_irq, Signal_context_capability());
+				_emulation->irq_handler(_irq, Signal_context_capability(), ds);
 			}
 	};
 }

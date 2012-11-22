@@ -70,7 +70,7 @@ namespace Emulation
 		 * \return           current IRQ state
 		 */
 		virtual bool irq_handler(unsigned const irq,
-		                         Signal_context_capability irq_edge) = 0;
+		                         Signal_context_capability irq_edge, Dataspace_capability) = 0;
 
 		/*********************
 		 ** RPC declaration **
@@ -79,7 +79,7 @@ namespace Emulation
 		GENODE_RPC(Rpc_write_mmio, void, write_mmio, addr_t, Access, umword_t);
 		GENODE_RPC(Rpc_read_mmio, umword_t, read_mmio, addr_t, Access);
 		GENODE_RPC(Rpc_irq_handler, bool, irq_handler,
-		           unsigned, Signal_context_capability);
+		           unsigned, Signal_context_capability, Dataspace_capability);
 
 		GENODE_RPC_INTERFACE(Rpc_write_mmio, Rpc_read_mmio, Rpc_irq_handler);
 	};

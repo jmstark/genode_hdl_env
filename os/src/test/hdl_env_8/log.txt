@@ -1,0 +1,84 @@
+real vea9x4 base-hw
+-------------------
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         1
+[init -> vinit -> measurement]    threads       4
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      19554
+[init -> vinit -> measurement]    avg IRQ tics  48.884
+[init -> vinit -> measurement]    avg IRQ ms    0.048
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         2
+[init -> vinit -> measurement]    threads       8
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      47712
+[init -> vinit -> measurement]    avg IRQ tics  59.639
+[init -> vinit -> measurement]    avg IRQ ms    0.059
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         3
+[init -> vinit -> measurement]    threads       12
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      75828
+[init -> vinit -> measurement]    avg IRQ tics  63.190
+[init -> vinit -> measurement]    avg IRQ ms    0.063
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         4
+[init -> vinit -> measurement]    threads       16
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      101924
+[init -> vinit -> measurement]    avg IRQ tics  63.702
+[init -> vinit -> measurement]    avg IRQ ms    0.063
+
+[init -> vinit -> measurement] Measurement started
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         5
+[init -> vinit -> measurement]    threads       20
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      129558
+[init -> vinit -> measurement]    avg IRQ tics  64.778
+[init -> vinit -> measurement]    avg IRQ ms    0.064
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         6
+[init -> vinit -> measurement]    threads       24
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      160994
+[init -> vinit -> measurement]    avg IRQ tics  67.080
+[init -> vinit -> measurement]    avg IRQ ms    0.067
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         7
+[init -> vinit -> measurement]    threads       28
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      188759
+[init -> vinit -> measurement]    avg IRQ tics  67.413
+[init -> vinit -> measurement]    avg IRQ ms    0.067
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         8
+[init -> vinit -> measurement]    threads       32
+[init -> vinit -> measurement]    IRQs received 100
+[init -> vinit -> measurement]    IRQ tics      213289
+[init -> vinit -> measurement]    avg IRQ tics  66.652
+[init -> vinit -> measurement]    avg IRQ ms    0.066
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         9
+[init -> vinit -> measurement]    threads       36
+[init -> vinit -> measurement]    IRQs received 500
+[init -> vinit -> measurement]    IRQ tics      1228396
+[init -> vinit -> measurement]    avg IRQ tics  68.244
+[init -> vinit -> measurement]    avg IRQ ms    0.068
+
+[init -> vinit -> measurement] Test result
+[init -> vinit -> measurement]    tasks         10
+[init -> vinit -> measurement]    threads       40
+[init -> vinit -> measurement]    IRQs received 500
+[init -> vinit -> measurement]    IRQ tics      1359391
+[init -> vinit -> measurement]    avg IRQ tics  67.969
+[init -> vinit -> measurement]    avg IRQ ms    0.067
+
