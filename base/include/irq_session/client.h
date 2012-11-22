@@ -24,7 +24,7 @@ namespace Genode {
 		explicit Irq_session_client(Irq_session_capability session)
 		: Rpc_client<Irq_session>(session) { }
 
-		void wait_for_irq() { call<Rpc_wait_for_irq>(); }
+		void wait_for_irq(Dataspace_capability ds) { call<Rpc_wait_for_irq>(ds); }
 	};
 }
 

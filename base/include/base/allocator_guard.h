@@ -59,8 +59,8 @@ namespace Genode {
 			bool alloc(size_t size, void **out_addr)
 			{
 				if ((_amount - _consumed) < (size + _allocator->overhead(size))) {
-					PWRN("Quota exceeded! amount=%zd, size=%zd, consumed=%zd",
-					     _amount, (size + _allocator->overhead(size)), _consumed);
+					PWRN("Quota exceeded! amount=%zd, size=%zd, consumed=%zd %p",
+					     _amount, (size + _allocator->overhead(size)), _consumed, this);
 					return false;
 				}
 				bool b = _allocator->alloc(size, out_addr);

@@ -22,7 +22,7 @@ namespace Genode {
 
 	struct Cpu_connection : Connection<Cpu_session>, Cpu_session_client
 	{
-		enum { RAM_QUOTA = 128*1024 };
+		enum { RAM_QUOTA = 256*1024 };
 
 		/**
 		 * Constructor
@@ -34,7 +34,7 @@ namespace Genode {
 		Cpu_connection(const char *label = "", long priority = DEFAULT_PRIORITY)
 		:
 			Connection<Cpu_session>(
-				session("priority=0x%lx, ram_quota=128K, label=\"%s\"",
+				session("priority=0x%lx, ram_quota=1024K, label=\"%s\"",
 				        priority, label)),
 			Cpu_session_client(cap()) { }
 	};
