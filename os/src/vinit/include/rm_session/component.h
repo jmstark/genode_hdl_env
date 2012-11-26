@@ -16,11 +16,13 @@
 
 /* Genode includes */
 #include <base/env.h>
+#include <base/allocator_guard.h>
 
 /* local includes */
 #include <cpu_client.h>
 #include <util/indexed.h>
 #include <instruction.h>
+#include <spy_session_args.h>
 
 namespace Init
 {
@@ -63,8 +65,8 @@ namespace Init
 			 * \param  thread   related thread
 			 */
 			Rm_client(Rm_session_component * const session,
-			          Thread_capability const thread)
-			: _session(session), _thread(thread), _state(0) { }
+			          Thread_capability const thread) :
+				_session(session), _thread(thread), _state(0) { }
 
 			/***************
 			 ** Accessors **
@@ -92,11 +94,9 @@ namespace Init
 			 * \param  sub_rm  see same-named member
 			 */
 			Managed_dataspace(Dataspace_capability ds_cap,
-			                  Rm_session_component * const sub_rm)
-			:
+			                  Rm_session_component * const sub_rm) :
 				Capability_indexed(ds_cap),
-				_sub_rm(sub_rm)
-			{ }
+				_sub_rm(sub_rm) { }
 
 			/***************
 			 ** Accessors **
@@ -132,8 +132,7 @@ namespace Init
 				       Dataspace_capability const ds_cap, off_t const offset)
 				:
 					_begin(begin), _end(end),
-					_ds_cap(ds_cap), _offset(offset)
-				{ }
+					_ds_cap(ds_cap), _offset(offset) { }
 
 				/**
 				 * Lookup region within this AVL subtree that covers 'addr'
@@ -160,11 +159,12 @@ namespace Init
 				bool higher(Region * e) { return e->_begin > _begin; }
 		};
 
-		Rm_session_client _parent_rm; /* host session */
-		Allocator * const _md_alloc; /* metadata allocator*/
-		Avl_tree<Region> _region_map; /* remembers all attachments that
-		                               * were made through this RM */
-		Lock _region_map_lock; /* sync access to '_region_map' */
+		Spy_session_args<64*1024> _args;       /* args adjustment */
+		Rm_session_client         _backend;    /* backend session */
+		Allocator_guard           _md_alloc;   /* metadata allocator */
+		Avl_tree<Region>          _region_map; /* remembers attachments that
+		                                        * were made through this RM */
+		Lock _region_map_lock;                 /* sync access to region map */
 
 		/**
 		 * Find RM attachment by address
@@ -203,19 +203,19 @@ namespace Init
 			 * \param  args  session arguments
 			 * \param  md    session-metadata allocator
 			 */
-			Rm_session_component(const char * args, Allocator * md) :
-				_parent_rm(env()->parent()->session<Rm_session>(args)),
-				_md_alloc(md)
-			{ }
+			Rm_session_component(const char * args, Allocator * md_alloc) :
+				_args(args),
+				_backend(env()->parent()->session<Rm_session>(_args.backend_args)),
+				_md_alloc(md_alloc, _args.spy_ram_quota) { }
 
-			/*****************
-			 ** Vrm_session **
-			 *****************/
+			/****************
+			 ** Rm_session **
+			 ****************/
 
 			State state()
 			{
 				/* get the classic RM state */
-				Rm_session::State state = _parent_rm.state();
+				Rm_session::State state = _backend.state();
 				if (state.type != Rm_session::READ_FAULT &&
 				    state.type != Rm_session::WRITE_FAULT) return state;
 
@@ -229,7 +229,7 @@ namespace Init
 				Cpu_session * const cpu_session = cpu_client->session();
 				assert(!rm_client->state());
 				Rm_client::State * const client_state =
-					new (_md_alloc) Rm_client::State;
+					new (&_md_alloc) Rm_client::State;
 				client_state->rm_session = this;
 				rm_client->state(client_state);
 				*static_cast<Thread_state *>(client_state) =
@@ -288,13 +288,9 @@ namespace Init
 
 				/* forget fault state of the client */
 				rm_client->state(0);
-				destroy(_md_alloc, client_state);
-				_parent_rm.processed(state);
+				destroy(&_md_alloc, client_state);
+				_backend.processed(state);
 			}
-
-			/****************
-			 ** Rm_session **
-			 ****************/
 
 			Local_addr attach(Dataspace_capability ds_cap, size_t size,
 			                  off_t off, bool use_local_addr,
@@ -303,38 +299,38 @@ namespace Init
 			{
 				/* let our parent do the attachment */
 				void * const addr =
-					_parent_rm.attach(ds_cap, size, off, use_local_addr,
-					                  local_addr, executable);
+					_backend.attach(ds_cap, size, off, use_local_addr,
+					                local_addr, executable);
 
 				/* remember attributes of the attachment */
 				void * const end = (void *)((addr_t)addr + size);
 				Region * const region =
-					new (_md_alloc) Region(addr, end, ds_cap, off);
+					new (&_md_alloc) Region(addr, end, ds_cap, off);
 				_region_map.insert(region);
 				return addr;
 			}
 
-			void detach(Local_addr la) { _parent_rm.detach(la); }
+			void detach(Local_addr la) { _backend.detach(la); }
 
 			Pager_capability add_client(Thread_capability t,
 			                                    unsigned)
 			{
 				/* remember the new client */
-				Rm_client * const c = new (_md_alloc) Rm_client(this, t);
-				return _parent_rm.add_client(t, c->id());
+				Rm_client * const c = new (&_md_alloc) Rm_client(this, t);
+				return _backend.add_client(t, c->id());
 			}
 
-			void fault_handler(Signal_context_capability handler)
-			{ _parent_rm.fault_handler(handler); }
+			void fault_handler(Signal_context_capability handler) {
+				_backend.fault_handler(handler); }
 
 			Dataspace_capability dataspace()
 			{
 				/* get managed dataspace from parent */
-				Dataspace_capability ds_cap = _parent_rm.dataspace();
+				Dataspace_capability ds_cap = _backend.dataspace();
 				if(!ds_cap.valid()) return ds_cap;
 
 				/* if it is valid, remember the managed dataspace */
-				new (_md_alloc) Managed_dataspace(ds_cap, this);
+				new (&_md_alloc) Managed_dataspace(ds_cap, this);
 				return ds_cap;
 			}
 	};

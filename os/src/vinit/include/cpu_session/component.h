@@ -16,10 +16,12 @@
 
 /* Genode includes */
 #include <base/env.h>
+#include <base/allocator_guard.h>
 #include <cpu_session/client.h>
 
 /* local includes */
 #include <cpu_client.h>
+#include <spy_session_args.h>
 
 namespace Init
 {
@@ -30,8 +32,9 @@ namespace Init
 	 */
 	class Cpu_session_component : public Rpc_object<Cpu_session>
 	{
-		Cpu_session_client _parent_session; /* host session */
-		Allocator * const _md_alloc; /* metadata allocator */
+		Spy_session_args<128*1024> _args;     /* args adjustment */
+		Cpu_session_client         _backend;  /* backend session */
+		Allocator_guard            _md_alloc; /* metadata allocator */
 
 		public:
 
@@ -41,10 +44,10 @@ namespace Init
 			 * \param  args  session arguments
 			 * \param  md    metadata allocator
 			 */
-			Cpu_session_component(const char * args, Allocator * md) :
-				_parent_session(env()->parent()->session<Cpu_session>(args)),
-				_md_alloc(md)
-			{ }
+			Cpu_session_component(const char * args, Allocator * md_alloc) :
+				_args(args),
+				_backend(env()->parent()->session<Cpu_session>(_args.backend_args)),
+				_md_alloc(md_alloc, _args.spy_ram_quota) { }
 
 			/*****************
 			 ** Cpu_session **
@@ -54,55 +57,54 @@ namespace Init
 			{
 				/* let parent create thread */
 				Thread_capability thread_cap;
-				thread_cap = _parent_session.create_thread(name, utcb);
+				thread_cap = _backend.create_thread(name, utcb);
 
 				/* if creation failed do not remember this thread */
 				if(!thread_cap.valid()) return thread_cap;
 
 				/* remember the new thread and its attributes */
-				new (_md_alloc) Cpu_client(thread_cap, &_parent_session);
+				new (&_md_alloc) Cpu_client(thread_cap, &_backend);
 				return thread_cap;
 			}
 
-			Ram_dataspace_capability utcb(Thread_capability thread)
-			{ return _parent_session.utcb(thread); }
+			Ram_dataspace_capability utcb(Thread_capability thread) {
+				return _backend.utcb(thread); }
 
-			void kill_thread(Thread_capability thread)
-			{ _parent_session.kill_thread(thread); }
+			void kill_thread(Thread_capability thread) {
+				_backend.kill_thread(thread); }
 
-			int set_pager(Thread_capability thread, Pager_capability  pager)
-			{ return _parent_session.set_pager(thread, pager); }
+			int set_pager(Thread_capability thread, Pager_capability  pager) {
+				return _backend.set_pager(thread, pager); }
 
-			int start(Thread_capability thread, addr_t ip, addr_t sp)
-			{ return _parent_session.start(thread, ip, sp); }
+			int start(Thread_capability thread, addr_t ip, addr_t sp) {
+				return _backend.start(thread, ip, sp); }
 
-			void pause(Thread_capability thread)
-			{ return _parent_session.pause(thread); }
+			void pause(Thread_capability thread) {
+				return _backend.pause(thread); }
 
-			void resume(Thread_capability thread)
-			{ return _parent_session.resume(thread); }
+			void resume(Thread_capability thread) {
+				return _backend.resume(thread); }
 
-			void cancel_blocking(Thread_capability thread)
-			{ return _parent_session.cancel_blocking(thread); }
+			void cancel_blocking(Thread_capability thread) {
+				return _backend.cancel_blocking(thread); }
 
-			Thread_state state(Thread_capability thread)
-			{ return _parent_session.state(thread); }
+			Thread_state state(Thread_capability thread) {
+				return _backend.state(thread); }
 
-			void state(Thread_capability thread, Thread_state state)
-			{ _parent_session.state(thread, state); }
+			void state(Thread_capability thread, Thread_state state) {
+				_backend.state(thread, state); }
 
 			void exception_handler(Thread_capability thread,
-			                       Signal_context_capability handler)
-			{ return _parent_session.exception_handler(thread, handler); }
+			                       Signal_context_capability handler) {
+				return _backend.exception_handler(thread, handler); }
 
-			void single_step(Thread_capability thread, bool enable)
-			{ return _parent_session.single_step(thread, enable); }
+			void single_step(Thread_capability thread, bool enable) {
+				return _backend.single_step(thread, enable); }
 
-			unsigned int num_cpus() const {
-				return _parent_session.num_cpus(); }
+			unsigned int num_cpus() const { return _backend.num_cpus(); }
 
 			void affinity(Thread_capability t, unsigned int cpu) {
-				_parent_session.affinity(t, cpu); }
+				_backend.affinity(t, cpu); }
 	};
 }
 
