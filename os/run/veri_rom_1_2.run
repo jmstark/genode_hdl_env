@@ -25,7 +25,29 @@ install_config {
 		<service name="LOG"/>
 		<service name="SIGNAL"/>
 	</parent-provides>
-	<default-route><any-service><parent/></any-service></default-route>
+	<default-route>
+		<service name="File_system"><child name="ram_fs" /></service>
+		<any-service><parent/></any-service>
+	</default-route>
+
+	<start name="ram_fs">
+		<resource name="RAM" quantum="5M"/>
+		<provides><service name="File_system"/></provides>
+		<config>
+			<content>
+				<rom name="monitor.rom" />
+				<dir name="usr">
+					<dir name="share">
+						<dir name="zoneinfo">
+							<rom name="UTC" />
+							<rom name="posixrules" />
+						</dir>
+					</dir>
+				</dir>
+			</content>
+			<policy label="vinit -> monitor" root="/" />
+		</config>
+	</start>
 
 	<start name="vinit">
 		<resource name="RAM" quantum="40M"/>
@@ -41,9 +63,10 @@ install_config {
 				<service name="IRQ"/>
 				<service name="LOG"/>
 				<service name="SIGNAL"/>
+				<service name="File_system"/>
 			</parent-provides>
 			<default-route>
-				<service name="File_system"><child name="ram_fs" /></service>
+				<service name="File_system"><parent/></service>
 				<any-service><parent/></any-service>
 			</default-route>
 
@@ -55,25 +78,6 @@ install_config {
 			<emulated by="monitor">
 				<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
 			</emulated>
-
-			<start name="ram_fs">
-				<resource name="RAM" quantum="5M"/>
-				<provides><service name="File_system"/></provides>
-				<config>
-					<content>
-						<rom name="monitor.rom" />
-						<dir name="usr">
-							<dir name="share">
-								<dir name="zoneinfo">
-									<rom name="UTC" />
-									<rom name="posixrules" />
-								</dir>
-							</dir>
-						</dir>
-					</content>
-					<policy label="monitor" root="/" />
-				</config>
-			</start>
 
 			<start name="test">
 				<binary name="test-veri_rom_1_2"/>
