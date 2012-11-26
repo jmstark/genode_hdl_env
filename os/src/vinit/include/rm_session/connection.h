@@ -30,7 +30,7 @@ namespace Init
 	{
 		public:
 
-			enum { RAM_QUOTA = 64 * 1024 };
+			enum { RAM_QUOTA = 320 * 1024 };
 
 			/**
 			 * Constructor
