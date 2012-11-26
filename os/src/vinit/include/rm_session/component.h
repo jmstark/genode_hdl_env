@@ -206,7 +206,7 @@ namespace Init
 			Rm_session_component(const char * args, Allocator * md_alloc) :
 				_args(args),
 				_backend(env()->parent()->session<Rm_session>(_args.backend_args)),
-				_md_alloc(md_alloc, _args.spy_ram_quota) { }
+				_md_alloc(md_alloc, _args.spy_ram_quota) { PINF("RM MD %p", &_md_alloc); }
 
 			/****************
 			 ** Rm_session **

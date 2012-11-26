@@ -259,6 +259,7 @@ Session_capability Child::session(Parent::Service_name const &name,
 	/* transfer the quota donation from the child's account to ourself */
 	size_t ram_quota = Arg_string::find_arg(_args, "ram_quota").long_value(0);
 
+PINF("1");
 	Transfer donation_from_child(ram_quota, _ram, env()->ram_session_cap());
 
 	Service *service = _policy->resolve_session_request(name.string(), _args);
@@ -267,10 +268,12 @@ Session_capability Child::session(Parent::Service_name const &name,
 	if (!service)
 		throw Service_denied();
 
+PINF("3");
 	/* transfer session quota from ourself to the service provider */
 	Transfer donation_to_service(ram_quota, env()->ram_session_cap(),
 	                             service->ram_session_cap());
 
+PINF("4");
 	/* create session */
 	Session_capability cap;
 	try { cap = service->session(_args); }
@@ -320,14 +323,17 @@ void Child::upgrade(Session_capability to_session, Parent::Upgrade_args const &a
 	size_t const ram_quota =
 		Arg_string::find_arg(args.string(), "ram_quota").ulong_value(0);
 
+PINF("5");
 	/* transfer quota from client to ourself */
 	Transfer donation_from_child(ram_quota, _ram,
 	                             env()->ram_session_cap());
+PINF("6");
 
 	/* transfer session quota from ourself to the service provider */
 	Transfer donation_to_service(ram_quota, env()->ram_session_cap(),
 	                             targeted_service->ram_session_cap());
 
+PINF("7");
 	try { targeted_service->upgrade(to_session, args.string()); }
 	catch (Service::Quota_exceeded) { throw Quota_exceeded(); }
 
