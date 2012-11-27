@@ -81,7 +81,7 @@ install_config {
 
 			<start name="test">
 				<binary name="test-veri_rom_1_2"/>
-				<resource name="RAM" quantum="5M"/>
+				<resource name="RAM" quantum="8M"/>
 			</start>
 
 		</config>

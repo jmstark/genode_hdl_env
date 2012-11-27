@@ -354,8 +354,9 @@ namespace Init
 				          long prio_levels_log2,
 
 				          /* vinit begin */
-				          Cpu_root * const cpu_root,
-				          Rm_root * const rm_root)
+				          Cpu_root * const    cpu_root,
+				          Rm_root * const     rm_root,
+				          Ram_session * const ram_src)
 				          /* vinit end */
 				:
 					prio_levels_log2(prio_levels_log2),
@@ -377,8 +378,16 @@ namespace Init
 						ram_quota -= session_donations;
 					else ram_quota = 0;
 
+					/* vinit begin */
+					/* transfer child quota from the initiator to us */
+					if (ram_src != env()->ram_session())
+						ram_src->transfer_quota(env()->ram_session_cap(),
+						                        ram_quota);
+
+					/* transfer child quota from us to the child */
 					ram.ref_account(Genode::env()->ram_session_cap());
-					Genode::env()->ram_session()->transfer_quota(ram.cap(), ram_quota);
+					env()->ram_session()->transfer_quota(ram.cap(), ram_quota);
+					/* vinit end */
 				}
 			} _resources;
 
@@ -444,7 +453,8 @@ namespace Init
 			               Cpu_root * const cpu_root,
 			               Rm_root * const rm_root,
 			               Service_registry * const spy_services,
-			               Service_registry * const emulated_services)
+			               Service_registry * const emulated_services,
+			               Ram_session * const      ram_src)
 			               /* vinit end */
 			:
 				_list_element(this),
@@ -452,7 +462,8 @@ namespace Init
 				_default_route_node(default_route_node),
 				_name_registry(name_registry),
 				_name(start_node, name_registry),
-				_resources(start_node, _name.unique, prio_levels_log2, cpu_root, rm_root),
+				_resources(start_node, _name.unique, prio_levels_log2,
+				           cpu_root, rm_root, ram_src),
 				_entrypoint(cap_session, ENTRYPOINT_STACK_SIZE, _name.unique, false),
 				_binary_rom(_name.file, _name.unique),
 				_config(_resources.ram.cap(), start_node),

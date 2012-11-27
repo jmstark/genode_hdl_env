@@ -189,13 +189,15 @@ namespace Init
 			      Rm_root * const           rm_root,
 			      Emulation_context * const emu_context,
 			      Service_registry * const  spy_services,
-			      Service_registry * const  emulated_services)
+			      Service_registry * const  emulated_services,
+			      Ram_session * const       ram_src)
 			:
 				Emulated_child(emulator_node, default_route_node,
 				               name_registry, prio_levels_log2,
 				               parent_services, child_services,
 				               cap_session, cpu_root, rm_root,
-				               spy_services, emulated_services),
+				               spy_services, emulated_services,
+				               ram_src),
 				Emulator_childs::Entry(emu_context),
 				_service_announced(Lock::LOCKED)
 			{
@@ -406,7 +408,8 @@ namespace Init
 					               _parent_services, _child_services,
 					               _cap_session, _cpu_root, _rm_root,
 					               region->emu_context(),
-					               _spy_services, _emulated_services);
+					               _spy_services, _emulated_services,
+					               &_resources.ram);
 				_emulator_childs.insert(emu_child);
 			} catch (...) { assert(0); }
 		}
@@ -540,7 +543,7 @@ int main(int, char **)
 	/* vinit begin */
 	enum { ENTRYPOINT_STACK_SIZE = 8*1024 };
 
-	static Sliced_heap sliced_heap(env()->ram_session(), env()->rm_session());
+	static Sliced_heap      heap(env()->ram_session(), env()->rm_session());
 	static Rpc_entrypoint   ep(&cap, ENTRYPOINT_STACK_SIZE, "entrypoint");
 	static Rpc_entrypoint   io_mem_ep(&cap, ENTRYPOINT_STACK_SIZE, "io_mem_entrypoint");
 	static Service_registry spy_services;
@@ -552,19 +555,19 @@ int main(int, char **)
 	static Child_registry   children;
 
 	/* vinit begin */
-	static Cpu_root cpu_root(&ep, &sliced_heap);
+	static Cpu_root cpu_root(&ep, &heap);
 	static Local_service cpu(Cpu_session::service_name(), &cpu_root);
 	spy_services.insert(&cpu);
 
-	static Rm_root rm_root(&ep, &sliced_heap);
+	static Rm_root rm_root(&ep, &heap);
 	static Local_service rm(Rm_session::service_name(), &rm_root);
 	spy_services.insert(&rm);
 
-	static Io_mem_root io_mem_root(&io_mem_ep, &sliced_heap, &rm_root);
+	static Io_mem_root io_mem_root(&io_mem_ep, &heap, &rm_root);
 	static Local_service io_mem(Io_mem_session::service_name(), &io_mem_root);
 	emulated_services.insert(&io_mem);
 
-	static Irq_root irq_root(&cap, &sliced_heap);
+	static Irq_root irq_root(&cap, &heap);
 	static Local_service irq(Irq_session::service_name(), &irq_root);
 	emulated_services.insert(&irq);
 	/* vinit end */
@@ -580,7 +583,7 @@ int main(int, char **)
 	catch (...) { }
 
 	/* vinit begin */
-	determine_emulated_services(default_route_node, &sliced_heap);
+	determine_emulated_services(default_route_node, &heap);
 	/* vinit end */
 
 	/* create children */
@@ -596,7 +599,7 @@ int main(int, char **)
 
 					               /* vinit begin */
 					               &cpu_root, &rm_root, &spy_services,
-					               &emulated_services);
+					               &emulated_services, env()->ram_session());
 					               /* vinit end */
 			children.insert(child);
 			if (start_node.is_last("start")) break;
