@@ -35,11 +35,9 @@ module monitor(
 `ifdef CFG_GDBSTUB_ENABLED
 /* 8kb ram */
 reg [31:0] mem[0:2047];
-initial $readmemh("gdbstub.rom", mem);
 `else
 /* 2kb ram */
 reg [31:0] mem[0:511];
-initial $readmemh("monitor.rom", mem);
 `endif
 
 /* write protect */

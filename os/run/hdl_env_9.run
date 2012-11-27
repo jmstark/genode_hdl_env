@@ -49,7 +49,7 @@ install_config {
 
 			<emulator name="monitor">
 				<binary name="monitor"/>
-				<resource name="RAM" quantum="10M"/>
+				<resource name="RAM" quantum="8M"/>
 			</emulator>
 
 			<emulated by="monitor">
@@ -58,91 +58,61 @@ install_config {
 				<resource name="IRQ" base="102" size="1" local="2"/>
 			</emulated>
 
-			<start name="ram_fs">
-				<resource name="RAM" quantum="6M"/>
-				<provides><service name="File_system"/></provides>
-				<config>
-					<content>
-						<rom name="monitor.rom" />
-						<dir name="usr">
-							<dir name="share">
-								<dir name="zoneinfo">
-									<rom name="UTC" />
-									<rom name="posixrules" />
-								</dir>
-							</dir>
-						</dir>
-					</content>
-					<policy label="monitor" root="/" />
-				</config>
-			</start>
+			<start name="task_0"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+<!--			<start name="task_1"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_2"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_3"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_4"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_5"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_6"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_7"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_8"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_9"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
 
-			<start name="task_0"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_1"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_2"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_3"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_4"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_5"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_6"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_7"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_8"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_9"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
+			<start name="task_10"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_11"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_12"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_13"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_14"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_15"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_16"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_17"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_18"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_19"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
 
-			<start name="task_10"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_11"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_12"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_13"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_14"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_15"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_16"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_17"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_18"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_19"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
+			<start name="task_20"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_21"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_22"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_23"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_24"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_25"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_26"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_27"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_28"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_29"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
 
-			<start name="task_20"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_21"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_22"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_23"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_24"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_25"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_26"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_27"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_28"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_29"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
+			<start name="task_30"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_31"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_32"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_33"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_34"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_35"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_36"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_37"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_38"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_39"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
 
-			<start name="task_30"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_31"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_32"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_33"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_34"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_35"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_36"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_37"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_38"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_39"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-
-			<start name="task_40"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_41"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_42"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_43"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_44"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_45"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_46"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_47"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_48"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_49"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-
-			<start name="task_50"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_51"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_52"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_53"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_54"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_55"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_56"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_57"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_58"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-			<start name="task_59"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="16M"/></start>
-
+			<start name="task_40"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_41"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_42"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_43"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_44"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_45"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_46"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_47"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_48"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+			<start name="task_49"><binary name="test-hdl_env_9"/><resource name="RAM" quantum="11M"/></start>
+-->
 		</config>
 	</start>
 
@@ -153,7 +123,7 @@ install_config {
 exec cp [genode_dir]/os/src/test/hdl_env_9/monitor/monitor.rom bin/
 exec cp /usr/share/zoneinfo/UTC bin/
 exec cp /usr/share/zoneinfo/posixrules bin/
-build_boot_image "core init vinit ram_fs test-hdl_env_9 test-hdl_env_9-dummy monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so monitor.rom UTC posixrules stdcxx.lib.so"
+build_boot_image "core init vinit test-hdl_env_9 monitor ld.lib.so libc.lib.so libm.lib.so libc_log.lib.so libc_fs.lib.so stdcxx.lib.so"
 
 # Execute test in Qemu
 run_genode_until forever

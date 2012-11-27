@@ -539,10 +539,19 @@ namespace Init
 			Genode::Service *resolve_session_request(const char *service_name,
 			                                         const char *args)
 			{
+				static unsigned rm_cnt;
+				static unsigned cpu_cnt;
+				static unsigned irq_cnt;
+				static unsigned io_mem_cnt;
 				Genode::Service *service = 0;
 
 				/* vinit begin */
 				/* check if the request targets a service that vinit spies out */
+				if(!strcmp(service_name, "RM") && !strcmp(_name.file, "monitor")) { PINF("RM++ %s %p", _name.file, this); rm_cnt++; }
+				if(!strcmp(service_name, "CPU") && !strcmp(_name.file, "monitor")) { PINF("CPU++ %s %p", _name.file, this); cpu_cnt++; }
+				if(!strcmp(service_name, "IRQ") && !strcmp(_name.file, "monitor")) { PINF("IRQ++ %s %p", _name.file, this); cpu_cnt++; }
+				if(!strcmp(service_name, "IO_MEM") && !strcmp(_name.file, "monitor")) { PINF("IO_MEM++ %s %p", _name.file, this); cpu_cnt++; }
+				PINF("RM %u CPU %u IRQ %u IO_MEM %u", rm_cnt, cpu_cnt, irq_cnt, io_mem_cnt);
 				service = _spy_services->find(service_name);
 				if (service) return service;
 				/* vinit end */
