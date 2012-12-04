@@ -24,10 +24,7 @@
 using namespace Wishbone_slave;
 using namespace Genode;
 
-enum {
-	MAX_SLAVE_CYCLES = 1000,
-	VERBOSE = 0,
-};
+enum { MAX_SLAVE_CYCLES = 1000 };
 
 
 /***********************
@@ -89,12 +86,12 @@ Emulation::Session_component::Session_component() { reset(); }
 umword_t Emulation::Session_component::read_mmio(addr_t const addr, Access const a)
 {
 	/* apply transfer parameters to the bus */
-	adr_i() = (uint32_t)addr;
+	adr_i(addr);
 	we_i() = 0;
 	switch(a) {
-	case Rm_session::LSB8:  sel_i() = 0b0001; break;
-	case Rm_session::LSB16: sel_i() = 0b0011; break;
-	case Rm_session::LSB32: sel_i() = 0b1111; break;
+	case Rm_session::LSB8:  sel_i(0b1);    break;
+	case Rm_session::LSB16: sel_i(0b11);   break;
+	case Rm_session::LSB32: sel_i(0b1111); break;
 	default: assert(0);
 	}
 	/* do a transfer-start cycle at the bus */
@@ -108,8 +105,8 @@ umword_t Emulation::Session_component::read_mmio(addr_t const addr, Access const
 		if (ack_o())
 		{
 			/* buffer read value */
-			umword_t const result = dat_o();
-			if (VERBOSE) Genode::printf("wishbone read %lx %lx\n", addr, result);
+			uint32_t result;
+			dat_o(&result);
 
 			/* do a transfer-end cycle */
 			/* FIXME might be unnecessary */
@@ -134,13 +131,13 @@ Emulation::Session_component::write_mmio(addr_t const addr, Access const a,
                                          umword_t const value)
 {
 	/* apply transfer parameters to the bus */
-	adr_i() = (uint32_t)addr;
-	dat_i() = (uint32_t)value;
+	adr_i(addr);
+	dat_i(value);
 	we_i() = 1;
 	switch(a) {
-	case Rm_session::LSB8:  sel_i() = 0b0001; break;
-	case Rm_session::LSB16: sel_i() = 0b0011; break;
-	case Rm_session::LSB32: sel_i() = 0b1111; break;
+	case Rm_session::LSB8:  sel_i(0b1);    break;
+	case Rm_session::LSB16: sel_i(0b11);   break;
+	case Rm_session::LSB32: sel_i(0b1111); break;
 	default: assert(0);
 	}
 	/* do a transfer-start cycle at the bus */
@@ -153,9 +150,6 @@ Emulation::Session_component::write_mmio(addr_t const addr, Access const a,
 	while (1) {
 		if (ack_o())
 		{
-			if (VERBOSE) Genode::printf("wishbone write %lx %x\n", addr, dat_i());
-//			for (unsigned volatile i = 0; i<400*1000; i++) ;
-
 			/* do a transfer-end cycle */
 			/* FIXME might be unnecessary */
 			cyc_i() = 0;
