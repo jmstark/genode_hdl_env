@@ -91,7 +91,7 @@ namespace Init
 			Thread_state state(Thread_capability thread) {
 				return _backend.state(thread); }
 
-			void state(Thread_capability thread, Thread_state state) {
+			void state(Thread_capability thread, Thread_state const & state) {
 				_backend.state(thread, state); }
 
 			void exception_handler(Thread_capability thread,
