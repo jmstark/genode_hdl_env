@@ -16,20 +16,33 @@
 
 namespace Wishbone_slave
 {
-	                            /* used bit range */
-	extern uint8_t  & rst_i();  /* [0:0]          */
-	extern uint8_t  & clk_i();  /* [0:0]          */
-	extern uint8_t  & stb_i();  /* [0:0]          */
-	extern uint8_t  & cyc_i();  /* [0:0]          */
-	extern uint32_t & adr_i();  /* [31:0]         */
-	extern uint32_t & dat_i();  /* [31:0]         */
-	extern uint8_t  & sel_i();  /* [3:0]          */
-	extern uint8_t  & we_i();   /* [0:0]          */
-	extern uint8_t  & ack_o();  /* [0:0]          */
-	extern uint8_t  & err_o();  /* [0:0]          */
-	extern uint8_t  & rty_o();  /* [0:0]          */
-	extern uint32_t & dat_o();  /* [31:0]         */
+	/**
+	 * In/out of fixed width
+	 */
+	extern uint8_t & rst_i();
+	extern uint8_t & clk_i();
+	extern uint8_t & stb_i();
+	extern uint8_t & cyc_i();
+	extern uint8_t & we_i();
+	extern uint8_t & ack_o();
+	extern uint8_t & err_o();
+	extern uint8_t & rty_o();
 
+	/**
+	 * Input of design specific width
+	 */
+	extern void sel_i(uint8_t const);
+	extern void adr_i(uint32_t const);
+	extern void dat_i(uint32_t const);
+
+	/**
+	 * Output of design specific width
+	 */
+	extern void dat_o(uint32_t * const);
+
+	/**
+	 * Do an evaluation cycle
+	 */
 	extern void evaluate_design();
 }
 

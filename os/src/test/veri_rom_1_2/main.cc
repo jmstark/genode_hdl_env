@@ -30,17 +30,45 @@ struct Rom : Io_mem_connection
 	                             base((unsigned)env()->rm_session()->attach(Io_mem::dataspace()))
 	{ }
 
-	unsigned read_w(unsigned const o)
+	uint32_t read_w(unsigned const o)
 	{
-		unsigned v;
+		uint32_t v;
 		asm volatile ("ldr %[v], [%[d]]"
 		              : [v]"=r"(v) : [d]"r"(base + o) : );
 		return v;
 	}
 
-	void write_w(unsigned const o, unsigned const v)
+	void write_w(unsigned const o, uint32_t const v)
 	{
 		asm volatile ("str %[v], [%[d]]"
+		              :: [v]"r"(v), [d]"r"(base + o) : );
+	}
+
+	uint16_t read_h(unsigned const o)
+	{
+		uint16_t v;
+		asm volatile ("ldrh %[v], [%[d]]"
+		              : [v]"=r"(v) : [d]"r"(base + o) : );
+		return v;
+	}
+
+	void write_h(unsigned const o, uint16_t const v)
+	{
+		asm volatile ("strh %[v], [%[d]]"
+		              :: [v]"r"(v), [d]"r"(base + o) : );
+	}
+
+	uint8_t read_b(unsigned const o)
+	{
+		uint8_t v;
+		asm volatile ("ldrb %[v], [%[d]]"
+		              : [v]"=r"(v) : [d]"r"(base + o) : );
+		return v;
+	}
+
+	void write_b(unsigned const o, uint8_t const v)
+	{
+		asm volatile ("strb %[v], [%[d]]"
 		              :: [v]"r"(v), [d]"r"(base + o) : );
 	}
 };
@@ -193,6 +221,16 @@ Test 2
 void test(off_t const init_o)
 {
 	enum { ROM_0_BASE = 0x71000000 };
+
+//static Rom rom(ROM_0_BASE);
+//unsigned addr = 3<<9;
+//rom.write_w(addr, 0x11111111);
+//rom.write_h(addr, 0x2222);
+//rom.write_b(addr, 0x33);
+//PINF("%x", rom.read_w(addr));
+//PINF("%x", rom.read_h(addr));
+//PINF("%x", rom.read_b(addr));
+//while(1);
 
 	static Watch watch(0);
 	static Test_rom rom_0(ROM_0_BASE, &watch);
