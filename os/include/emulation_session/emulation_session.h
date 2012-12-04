@@ -17,6 +17,7 @@
 /* Genode includes */
 #include <base/stdint.h>
 #include <session/session.h>
+#include <rm_session/rm_session.h>
 
 namespace Emulation
 {
@@ -27,8 +28,7 @@ namespace Emulation
 	 */
 	struct Session : Genode::Session
 	{
-		/* determines affected bits within an accessed word */
-		enum Access { LSB8, LSB16, LSB32 };
+		typedef Rm_session::Access_format Access;
 
 		/* exceptions */
 		class Invalid_mmio_address : public Exception { };

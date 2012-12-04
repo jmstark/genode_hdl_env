@@ -66,12 +66,10 @@ namespace Init
 				switch(s.type)
 				{
 				case Rm_session::WRITE_FAULT: {
-					_emu->write_mmio(_io_mem_base + s.addr,
-					                 Emulation::Session::LSB32, s.value);
+					_emu->write_mmio(_io_mem_base + s.addr, s.format, s.value);
 					break; }
 				case Rm_session::READ_FAULT: {
-					s.value = _emu->read_mmio(_io_mem_base + s.addr,
-					                          Emulation::Session::LSB32);
+					s.value = _emu->read_mmio(_io_mem_base + s.addr, s.format);
 					break; }
 				default: return;
 				}
