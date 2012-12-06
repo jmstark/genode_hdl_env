@@ -24,7 +24,7 @@
  */
 class Platform_timer_base :
 	public Genode::Io_mem_connection,
-	public Genode::Sp804_base<Genode::Board_base::SP804_0_1_CLOCK>
+	public Genode::Sp804_base<Genode::Board_base::SP804_CLOCK>
 {
 	public:
 
@@ -35,7 +35,7 @@ class Platform_timer_base :
 		 */
 		Platform_timer_base() :
 			Io_mem_connection(Genode::Board_base::SP804_0_1_MMIO_BASE,
-			                  Genode::Board_base::SP804_0_1_MMIO_SIZE),
+			                  Genode::Board_base::SP804_MMIO_SIZE),
 
 			Sp804_base((Genode::addr_t)Genode::env()->rm_session()->
 			                           attach(dataspace()))
