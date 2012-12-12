@@ -22,6 +22,7 @@ namespace Genode
 	class Irq
 	{
 		uint8_t * _raw;
+		bool _state;
 		Signal_context_capability _signal;
 		Lock _lock;
 
@@ -32,7 +33,7 @@ namespace Genode
 			 *
 			 * \param raw  raw HDL interrupt line
 			 */
-			Irq(uint8_t * const raw) : _raw(raw) { }
+			Irq(uint8_t * const raw) : _raw(raw), _state(*raw) { }
 
 			/**
 			 * Set the IRQ-handler signal
@@ -44,15 +45,16 @@ namespace Genode
 			}
 
 			/**
-			 * Trigger the IRQ-handler signal if HDL interrupt is active
+			 * Trigger the IRQ-handler signal if HDL interrupt line changed
 			 */
 			void check()
 			{
 				Lock::Guard guard(_lock);
-				if (*_raw && _signal.valid()) {
+				if (*_raw != _state && _signal.valid()) {
 					Signal_transmitter t(_signal);
 					t.submit();
 				}
+				_state = *_raw;
 			}
 
 

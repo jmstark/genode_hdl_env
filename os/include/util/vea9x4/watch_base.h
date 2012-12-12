@@ -15,31 +15,31 @@
 #define _INCLUDE__UTIL__VEA9X4__WATCH_BASE_H_
 
 /* Genode includes */
-#include <drivers/board.h>
+#include <drivers/board_base.h>
 #include <io_mem_session/connection.h>
 #include <drivers/timer/sp804_base.h>
 
 namespace Genode
 {
 	struct Watch_base : Io_mem_connection,
-	                    Sp804_base<Board::SP804_CLOCK>
+	                    Sp804_base<Board_base::SP804_CLOCK>
 	{
 		typedef Io_mem_connection Io_mem;
-		typedef Sp804_base<Board::SP804_CLOCK> Timer;
+		typedef Sp804_base<Board_base::SP804_CLOCK> Timer;
 
 		static addr_t io_mem_base(unsigned const id)
 		{
 			switch (id)
 			{
-			case 0: return Board::SP804_0_1_MMIO_BASE;
-			case 1: return Board::SP804_2_3_MMIO_BASE;
+			case 0: return Board_base::SP804_0_1_MMIO_BASE;
+			case 1: return Board_base::SP804_2_3_MMIO_BASE;
 			}
 			PDBG("Invalid watch ID");
 			return 0;
 		}
 
 		Watch_base(unsigned const id) :
-			Io_mem(io_mem_base(id), Board::SP804_MMIO_SIZE),
+			Io_mem(io_mem_base(id), Board_base::SP804_MMIO_SIZE),
 			Timer((addr_t)env()->rm_session()->attach(Io_mem::dataspace()))
 		{ }
 	};

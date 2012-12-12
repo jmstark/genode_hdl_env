@@ -65,7 +65,8 @@ ifneq ($(EMU_NAME),)
   ifeq ($(VERILATOR),)
     $(error Need to have Genode package 'verilator' installed. \
             You can meet this condition by doing \
-            'make prepare PKG="verilator"' within 'libports')
+            'make prepare PKG="verilator"' within 'libports' and \
+            add 'libports' to your 'REPOSITORIES' variable)
   endif
 
   # link against the verilog emulation enviroment
