@@ -432,6 +432,7 @@ class Launcher : public Anchor
 	private:
 
 		const char      *_prg_name;  /* null-terminated name of the program */
+		const char      *_name;      /* null-terminated label of the program */
 		int              _active;
 		int              _exec_once;
 		Launchpad       *_launchpad;
@@ -443,19 +444,21 @@ class Launcher : public Anchor
 		/**
 		 * Constructors
 		 */
-		Launcher(const char *prg_name, int exec_once = 0,
+		Launcher(const char *prg_name, const char *name, int exec_once = 0,
 		         unsigned long quota = 0, Launcher_config *config = 0) :
-			_prg_name(prg_name), _active(1),
+			_prg_name(prg_name), _name(name), _active(1),
 			_exec_once(exec_once), _quota(quota), _config(config) { }
 
-		Launcher(const char *prg_name, Launchpad *launchpad,
+		Launcher(const char *prg_name, const char *name, Launchpad *launchpad,
 		         unsigned long quota, Launcher_config *config = 0) :
-			_prg_name(prg_name), _launchpad(launchpad), _quota(quota),
-			_config(config) { }
+			_prg_name(prg_name), _name(name), _launchpad(launchpad),
+			_quota(quota), _config(config) { }
 
 		int active() { return _active; }
 
 		const char *prg_name() { return _prg_name; }
+
+		const char *name() { return _name; }
 
 		void quota(unsigned long quota) { _quota = quota; }
 

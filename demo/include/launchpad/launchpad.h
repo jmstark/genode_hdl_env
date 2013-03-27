@@ -196,9 +196,10 @@ class Launchpad
 
 		virtual void add_launcher(const char *filename,
 		                          unsigned long default_quota,
-		                          Genode::Dataspace_capability config_ds) { }
+		                          Genode::Dataspace_capability config_ds,
+		                          const char *name = 0) { }
 
-		virtual void add_child(const char *unique_name,
+		virtual void add_child(const char *unique_name, const char *name,
 		                       unsigned long quota,
 		                       Launchpad_child *launchpad_child,
 		                       Genode::Allocator *alloc) { }
@@ -208,7 +209,8 @@ class Launchpad
 
 //		virtual void child_quota(const char *name, unsigned long quota) { }
 
-		Launchpad_child *start_child(const char *prg_name, unsigned long quota,
+		Launchpad_child *start_child(const char *prg_name, const char *name,
+		                             unsigned long quota,
 		                             Genode::Dataspace_capability config_ds);
 
 		/**

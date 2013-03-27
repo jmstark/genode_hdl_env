@@ -34,7 +34,7 @@
 
 
 enum { LOG_W = 80 };  /* number of visible characters per line */
-enum { LOG_H = 25 };  /* number of lines of log window         */
+enum { LOG_H = 50 };  /* number of lines of log window         */
 
 
 /*

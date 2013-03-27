@@ -50,7 +50,7 @@ install_config {
 	</start>
 
 	<start name="vinit">
-		<resource name="RAM" quantum="40M"/>
+		<resource name="RAM" quantum="100M"/>
 		<config verbose="no">
 			<parent-provides>
 				<service name="ROM"/>
@@ -66,13 +66,12 @@ install_config {
 				<service name="File_system"/>
 			</parent-provides>
 			<default-route>
-				<service name="File_system"><parent/></service>
 				<any-service><parent/></any-service>
 			</default-route>
 
 			<emulator name="monitor">
 				<binary name="monitor"/>
-				<resource name="RAM" quantum="5M"/>
+				<resource name="RAM" quantum="10M"/>
 			</emulator>
 
 			<emulated by="monitor">
@@ -81,7 +80,7 @@ install_config {
 
 			<start name="test">
 				<binary name="test-veri_rom_1_2"/>
-				<resource name="RAM" quantum="8M"/>
+				<resource name="RAM" quantum="16M"/>
 			</start>
 
 		</config>

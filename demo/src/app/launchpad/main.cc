@@ -116,9 +116,22 @@ static void process_config(Launchpad *launchpad)
 				Init::Child_config *config = new (env()->heap())
 					Init::Child_config(Genode::env()->ram_session_cap(), node);
 
+				/* read launcher name */
+				char *name = 0;
+				try {
+					Xml_node name_node = node.sub_node("name");
+					size_t name_len = name_node.content_size();
+					name = (char *)env()->heap()->alloc(name_len + 1);
+					if (!name) {
+						::printf("Error: Out of memory while processing configuration\n");
+						return;
+					}
+					name_node.value(name, name_len + 1);
+				} catch (...) { }
+
 				/* add launchpad entry */
 				launchpad->add_launcher(filename, default_ram_quota,
-				                        config->dataspace());
+				                        config->dataspace(), name);
 				launcher_cnt++;
 
 			} catch (...) {

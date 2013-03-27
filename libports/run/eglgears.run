@@ -8,6 +8,10 @@ build {
 	lib/gallium
 }
 
+lappend_if [have_spec usb] build drivers/usb
+
+build $build
+
 create_boot_directory
 
 set config {
@@ -32,7 +36,7 @@ set config {
 
 append_if [have_spec sdl] config {
 	<start name="fb_sdl">
-		<resource name="RAM" quantum="4M"/>
+		<resource name="RAM" quantum="8M"/>
 		<provides>
 			<service name="Input"/>
 			<service name="Framebuffer"/>
@@ -41,35 +45,48 @@ append_if [have_spec sdl] config {
 
 append_if [have_spec pci] config {
 	<start name="pci_drv">
-		<resource name="RAM" quantum="1M"/>
+		<resource name="RAM" quantum="8M"/>
 		<provides><service name="PCI"/></provides>
 	</start>}
 
 append_if [have_spec vesa] config {
 	<start name="vesa_drv">
-		<resource name="RAM" quantum="1M"/>
+		<resource name="RAM" quantum="8M"/>
 		<provides><service name="Framebuffer"/></provides>
 	</start>}
 
 append_if [have_spec pl11x] config {
 	<start name="pl11x_drv">
-		<resource name="RAM" quantum="2M"/>
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Framebuffer"/></provides>
+	</start>}
+
+append_if [have_spec omap4] config {
+	<start name="omap4_fb_drv">
+		<resource name="RAM" quantum="8M"/>
 		<provides><service name="Framebuffer"/></provides>
 	</start>}
 
 append_if [have_spec ps2] config {
 	<start name="ps2_drv">
-		<resource name="RAM" quantum="1M"/>
+		<resource name="RAM" quantum="8M"/>
 		<provides><service name="Input"/></provides>
+	</start> }
+
+append_if [expr ![have_spec ps2] && [have_spec usb]] config {
+	<start name="usb_drv">
+		<resource name="RAM" quantum="24M"/>
+		<provides><service name="Input"/></provides>
+		<config> <hid/> </config>
 	</start> }
 
 append config {
 	<start name="timer">
-		<resource name="RAM" quantum="1M"/>
+		<resource name="RAM" quantum="8M"/>
 		<provides><service name="Timer"/></provides>
 	</start>
 	<start name="nitpicker">
-		<resource name="RAM" quantum="1M"/>
+		<resource name="RAM" quantum="8M"/>
 		<provides><service name="Nitpicker"/></provides>
 		<route><any-service><parent/><any-child/></any-service></route>
 	</start>
@@ -95,7 +112,7 @@ append config {
 						<service name="Timer"/>
 					</parent-provides>
 					<start name="nit_fb">
-						<resource name="RAM" quantum="2M"/>
+						<resource name="RAM" quantum="8M"/>
 						<provides><service name="Input"/><service name="Framebuffer"/></provides>
 						<route><any-service><parent/></any-service></route>
 						<config xpos="300" ypos="100" width="576" height="408" />
@@ -125,6 +142,8 @@ lappend_if [have_spec vesa]  boot_modules vesa_drv
 lappend_if [have_spec pl11x] boot_modules pl11x_drv
 lappend_if [have_spec ps2]   boot_modules ps2_drv
 lappend_if [have_spec i915]  boot_modules gallium-i915.lib.so
+lappend_if [have_spec omap4] boot_modules omap4_fb_drv
+lappend_if [have_spec usb]   boot_modules usb_drv
 
 build_boot_image $boot_modules
 

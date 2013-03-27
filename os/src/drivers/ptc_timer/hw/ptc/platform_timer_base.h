@@ -135,7 +135,9 @@ class Platform_timer_base : public Genode::Io_mem_connection,
 		Platform_timer_base()
 		: Io_mem_connection(MMIO_BASE, MMIO_SIZE),
 		  Ptc((Genode::addr_t)Genode::env()->rm_session()->attach(dataspace()))
-		{ PDBG("."); }
+		{
+			Genode::printf("--- timer driver ---\n");
+		}
 };
 
 #endif /* _HW__PTC__PLATFORM_TIMER_BASE_H_ */

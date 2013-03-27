@@ -102,6 +102,7 @@ void Launchpad::_get_unique_child_name(const char *filename, char *dst, int dst_
 
 
 Launchpad_child *Launchpad::start_child(const char *filename,
+                                        const char *name,
                                         unsigned long ram_quota,
                                         Genode::Dataspace_capability config_ds)
 {
@@ -187,7 +188,7 @@ Launchpad_child *Launchpad::start_child(const char *filename,
 	Lock::Guard lock_guard(_children_lock);
 	_children.insert(c);
 
-	add_child(unique_name, ram_quota, c, c->heap());
+	add_child(unique_name, name, ram_quota, c, c->heap());
 	return c;
 }
 

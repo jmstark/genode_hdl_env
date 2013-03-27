@@ -122,23 +122,25 @@ class Launchpad_window : public Scrollbar_listener,
 
 		void add_launcher(const char *filename,
 		                  unsigned long default_quota,
-		                  Genode::Dataspace_capability config_ds = Genode::Dataspace_capability())
+		                  Genode::Dataspace_capability config_ds = Genode::Dataspace_capability(),
+		                  const char *name = 0)
 		{
 			Launch_entry<PT> *le;
-			le = new Launch_entry<PT>(filename, default_quota / 1024,
+			le = new Launch_entry<PT>(filename, name, default_quota / 1024,
 			                          initial_quota() / 1024,
 			                          this, config_ds);
 			_launch_section.append(le);
 			refresh();
 		}
 
-		void add_child(const char *unique_name,
+		void add_child(const char *unique_name, const char *name,
 		               unsigned long quota,
 		               Launchpad_child *launchpad_child,
 		               Genode::Allocator *alloc)
 		{
 			Child_entry<PT> *ce;
-			ce = new (alloc) Child_entry<PT>(unique_name, quota / 1024,
+			ce = new (alloc) Child_entry<PT>(name ? name : unique_name,
+			                                 quota / 1024,
 			                                 initial_quota() / 1024,
 			                                 this, launchpad_child);
 			_child_entry_list.insert(ce);

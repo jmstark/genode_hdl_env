@@ -1,5 +1,5 @@
 #
-# \brief  Verilog PTC
+# \brief  Emulator of the PTC timer
 # \author Martin Stein
 # \date   2012-12-04
 #
@@ -11,7 +11,7 @@ TARGET = test-ptc_hdl_env-ptc
 SRC_VLG = ptc_top.v
 
 # add C++ sources
-SRC_CC = integration.cc
+SRC_CC = wiring.cc
 
 # add library dependencies
 LIBS = verilator_env

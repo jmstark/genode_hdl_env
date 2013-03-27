@@ -37,13 +37,13 @@ class Launch_entry : public Parent_element, public Loadbar_listener
 		/**
 		 * Constructor
 		 */
-		Launch_entry(const char *prg_name, int initial_quota, int max_quota,
-		             Launchpad  *launchpad,
+		Launch_entry(const char *prg_name, const char *name, int initial_quota,
+		             int max_quota, Launchpad  *launchpad,
 		             Genode::Dataspace_capability config_ds)
 		: _block(Block::RIGHT), _loadbar(this, &label_font), _config(config_ds),
-		  _launcher(prg_name, launchpad, 1024 * initial_quota, &_config)
+		  _launcher(prg_name, name, launchpad, 1024 * initial_quota, &_config)
 		{
-			_block.append_launchertext(prg_name, &link_style, &_launcher);
+			_block.append_launchertext(name ? name : prg_name, &link_style, &_launcher);
 
 			_loadbar.max_value(max_quota);
 			_loadbar.value(initial_quota);

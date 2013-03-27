@@ -1,0 +1,342 @@
+build {
+	core
+	init
+	vinit
+	drivers/framebuffer drivers/pci drivers/input
+	drivers/timer
+	drivers/ptc_timer
+	server/ram_fs
+	server/nitpicker
+	server/nitlog
+	app/launchpad
+	test/ptc_hdl_env
+	test/timer
+ 	test/veri_rom_1_2
+}
+
+lappend_if [have_spec usb] build drivers/usb
+
+build $build
+
+create_boot_directory
+
+set config {
+<config>
+	<parent-provides>
+		<service name="ROM"/>
+		<service name="RAM"/>
+		<service name="IRQ"/>
+		<service name="IO_MEM"/>
+		<service name="IO_PORT"/>
+		<service name="CAP"/>
+		<service name="PD"/>
+		<service name="RM"/>
+		<service name="CPU"/>
+		<service name="LOG"/>
+		<service name="SIGNAL"/>
+	</parent-provides>
+	<default-route>
+		<any-service> <parent/> <any-child/> </any-service>
+	</default-route>
+}
+
+append_if [have_spec sdl] config {
+	<start name="fb_sdl">
+		<resource name="RAM" quantum="8M"/>
+		<provides>
+			<service name="Input"/>
+			<service name="Framebuffer"/>
+		</provides>
+	</start>}
+
+append_if [have_spec pci] config {
+	<start name="pci_drv">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="PCI"/></provides>
+	</start>}
+
+append_if [have_spec vesa] config {
+	<start name="vesa_drv">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Framebuffer"/></provides>
+	</start>}
+
+append_if [have_spec pl11x] config {
+	<start name="pl11x_drv">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Framebuffer"/></provides>
+	</start>}
+
+append_if [have_spec omap4] config {
+	<start name="omap4_fb_drv">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Framebuffer"/></provides>
+	</start>}
+
+append_if [have_spec ps2] config {
+	<start name="ps2_drv">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Input"/></provides>
+	</start> }
+
+append_if [expr ![have_spec ps2] && [have_spec usb]] config {
+	<start name="usb_drv">
+		<resource name="RAM" quantum="24M"/>
+		<provides><service name="Input"/></provides>
+		<config> <hid/> </config>
+	</start> }
+
+append config {
+	<start name="timer">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Timer"/></provides>
+	</start>
+
+	<start name="nitpicker">
+		<resource name="RAM" quantum="8M"/>
+		<provides><service name="Nitpicker"/></provides>
+		<route><any-service><parent/><any-child/></any-service></route>
+	</start>
+
+	<start name="launchpad">
+		<resource name="RAM" quantum="1G"/>
+		<config>
+
+			<launcher>
+				<ram_quota>100M</ram_quota>
+				<filename>init</filename>
+				<name>Monitor</name>
+				<config>
+					<parent-provides>
+						<service name="ROM"/>
+						<service name="RAM"/>
+						<service name="IRQ"/>
+						<service name="IO_MEM"/>
+						<service name="IO_PORT"/>
+						<service name="CAP"/>
+						<service name="PD"/>
+						<service name="RM"/>
+						<service name="CPU"/>
+						<service name="LOG"/>
+						<service name="PCI"/>
+						<service name="SIGNAL"/>
+						<service name="Nitpicker"/>
+						<service name="Timer"/>
+					</parent-provides>
+					<default-route><any-service><parent/><any-child/></any-service></default-route>
+
+					<start name="nitlog">
+						<resource name="RAM" quantum="8M"/>
+						<provides><service name="LOG"/></provides>
+					</start>
+
+					<start name="ram_fs">
+						<route>
+							<service name="LOG"><child name="nitlog"/></service>
+							<any-service><parent /></any-service>
+						</route>
+						<resource name="RAM" quantum="5M"/>
+						<provides><service name="File_system"/></provides>
+						<config>
+							<content>
+								<rom name="monitor.rom" />
+								<dir name="usr">
+									<dir name="share">
+										<dir name="zoneinfo">
+											<rom name="UTC" />
+											<rom name="posixrules" />
+										</dir>
+									</dir>
+								</dir>
+							</content>
+							<policy label="vinit -> monitor" root="/" />
+						</config>
+					</start>
+
+					<start name="vinit">
+						<route>
+							<service name="File_system"><child name="ram_fs" /></service>
+							<service name="LOG"><child name="nitlog"/></service>
+							<any-service><parent /></any-service>
+						</route>
+						<resource name="RAM" quantum="100M"/>
+						<config verbose="no">
+							<parent-provides>
+								<service name="ROM"/>
+								<service name="RAM"/>
+								<service name="CAP"/>
+								<service name="PD"/>
+								<service name="RM"/>
+								<service name="CPU"/>
+								<service name="IO_MEM"/>
+								<service name="IRQ"/>
+								<service name="LOG"/>
+								<service name="SIGNAL"/>
+								<service name="Timer"/>
+								<service name="File_system"/>
+							</parent-provides>
+							<default-route>
+								<any-service><parent/></any-service>
+							</default-route>
+
+							<emulator name="monitor">
+								<binary name="monitor"/>
+								<resource name="RAM" quantum="10M"/>
+							</emulator>
+
+							<emulated by="monitor">
+								<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
+							</emulated>
+
+							<start name="test_1">
+								<binary name="test-veri_rom_1_2"/>
+								<resource name="RAM" quantum="16M"/>
+							</start>
+
+							<start name="test_2">
+								<binary name="test-veri_rom_1_2"/>
+								<resource name="RAM" quantum="16M"/>
+							</start>
+
+						</config>
+					</start>
+
+				</config>
+			</launcher>
+
+			<launcher>
+				<ram_quota>100M</ram_quota>
+				<filename>init</filename>
+				<name>PTC timer</name>
+				<config>
+					<parent-provides>
+						<service name="ROM"/>
+						<service name="RAM"/>
+						<service name="IRQ"/>
+						<service name="IO_MEM"/>
+						<service name="IO_PORT"/>
+						<service name="CAP"/>
+						<service name="PD"/>
+						<service name="RM"/>
+						<service name="CPU"/>
+						<service name="LOG"/>
+						<service name="PCI"/>
+						<service name="SIGNAL"/>
+						<service name="Nitpicker"/>
+						<service name="Timer"/>
+					</parent-provides>
+					<default-route><any-service> <parent/> <any-child/> </any-service></default-route>
+
+					<start name="nitlog">
+						<resource name="RAM" quantum="8M"/>
+						<provides><service name="LOG"/></provides>
+					</start>
+
+					<start name="test_1">
+						<binary name="test-timer"/>
+						<route>
+							<service name="LOG"><child name="nitlog"/></service>
+							<any-service><parent /></any-service>
+						</route>
+						<resource name="RAM" quantum="10M"/>
+					</start>
+
+					<start name="vinit">
+						<resource name="RAM" quantum="1G"/>
+						<route>
+							<service name="LOG"><child name="nitlog"/></service>
+							<any-service><parent /></any-service>
+						</route>
+						<config verbose="no">
+							<parent-provides>
+								<service name="ROM"/>
+								<service name="RAM"/>
+								<service name="CAP"/>
+								<service name="PD"/>
+								<service name="RM"/>
+								<service name="CPU"/>
+								<service name="IO_MEM"/>
+								<service name="IRQ"/>
+								<service name="LOG"/>
+								<service name="SIGNAL"/>
+								<service name="Timer"/>
+							</parent-provides>
+							<default-route><any-service><parent/></any-service></default-route>
+
+							<emulator name="ptc">
+								<binary name="test-ptc_hdl_env-ptc"/>
+								<resource name="RAM" quantum="10M"/>
+							</emulator>
+
+							<emulated by="ptc">
+								<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
+								<resource name="IRQ" base="100" size="1" local="0"/>
+							</emulated>
+
+							<start name="ptc_driver">
+								<binary name="ptc_timer"/>
+								<resource name="RAM" quantum="20M"/>
+								<provides><service name="Timer"/></provides>
+							</start>
+
+							<start name="test_2">
+								<binary name="test-timer"/>
+								<resource name="RAM" quantum="20M"/>
+								<route>
+									<service name="Timer"><child name="ptc_driver"/></service>
+									<any-service><parent /></any-service>
+								</route>
+							</start>
+
+						</config>
+					</start>
+
+				</config>
+			</launcher>
+
+		</config>
+	</start>
+</config>
+}
+
+install_config $config
+
+set boot_modules {
+	core
+	init
+	vinit
+	timer
+	ld.lib.so
+	libc.lib.so
+	libm.lib.so
+	libc_log.lib.so
+	nitpicker
+	launchpad
+	test-timer
+	ptc_timer
+	test-ptc_hdl_env-ptc
+	stdcxx.lib.so
+	libc_fs.lib.so
+	nitlog
+	ram_fs
+	test-veri_rom_1_2
+	monitor
+	monitor.rom
+	posixrules
+	UTC
+}
+
+lappend_if [have_spec linux] boot_modules fb_sdl
+lappend_if [have_spec pci]   boot_modules pci_drv
+lappend_if [have_spec vesa]  boot_modules vesa_drv
+lappend_if [have_spec pl11x] boot_modules pl11x_drv
+lappend_if [have_spec ps2]   boot_modules ps2_drv
+lappend_if [have_spec omap4] boot_modules omap4_fb_drv
+lappend_if [have_spec usb]   boot_modules usb_drv
+
+build_boot_image $boot_modules
+
+append qemu_args " -m 768"
+
+run_genode_until forever
+

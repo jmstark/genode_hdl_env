@@ -91,19 +91,20 @@ int main(int argc, char **argv)
 	main_timer.sigh(sig);
 	main_timer.trigger_periodic(1000*1000);
 
-	printf("--- timer test ---\n");
+	printf("--- timer test single ---\n");
 	while (1) {
 		Signal s = sig_rcv.wait_for_signal();
 		sec += s.num();
-		if (sec > 59) {
+		if (sec > 20) {
 			unsigned add_min = sec / 60;
 			min += add_min;
 			sec -= add_min * 60;
-			if (min > 59) min = 0;
+			if (min > 1) break;
 		}
 		printf("          %02u:%02u\n", min, sec);
 	}
 
+	printf("\n--- timer test multiple ---\n");
 //	/* check long single timeout */
 //	printf("register two-seconds timeout...\n");
 //	main_timer.msleep(2000);
