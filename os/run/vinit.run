@@ -37,7 +37,7 @@ install_config {
 
 			<emulator name="fpu">
 				<binary name="test-vinit-fpu"/>
-				<resource name="RAM" quantum="2M"/>
+				<resource name="RAM" quantum="4M"/>
 			</emulator>
 
 			<emulated by="fpu">

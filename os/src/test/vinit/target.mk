@@ -11,5 +11,5 @@ TARGET = test-vinit
 SRC_CC += main.cc
 
 # Add libraries
-LIBS += cxx env
+LIBS += base
 

@@ -14,7 +14,7 @@ SRC_CC += main.cc
 INC_DIR += $(PRG_DIR)
 
 # add library dependencies
-LIBS += cxx env server signal
+LIBS += base
 
 # declare source paths
 vpath main.cc $(PRG_DIR)
