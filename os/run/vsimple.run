@@ -42,18 +42,12 @@ install_config {
 
 			<emulated by="fpu">
 				<resource name="IO_MEM" base="0x71000000" size="0x1000" local="0x0"/>
-				<resource name="IO_MEM" base="0x71001000" size="0x1000" local="0x1000"/>
 				<resource name="IRQ" base="2000" size="1" local="1"/>
 			</emulated>
 
 			<start name="test_1">
 				<binary name="test-vsimple"/>
-				<resource name="RAM" quantum="3M"/>
-			</start>
-
-			<start name="test_2">
-				<binary name="test-vsimple"/>
-				<resource name="RAM" quantum="3M"/>
+				<resource name="RAM" quantum="8M"/>
 			</start>
 
 		</config>

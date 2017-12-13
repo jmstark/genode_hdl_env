@@ -208,37 +208,7 @@ namespace Emulation
 
 				void entry()
 				{
-					while (1)
-					{
-						/* wait for a calculation request by the emulator */
-						while (_emu->_receiver.wait_for_signal().context() !=
-						       &(_emu->_calc_up)) ;
-
-						/* buffer MMIO state needed for the calculation */
-						unsigned const arg1 = _emu->_mmio_2.read<Mmio_2::Arg_1>();
-						unsigned const arg2 = _emu->_mmio_2.read<Mmio_2::Arg_2>();
-						unsigned const ctrl = _emu->_mmio_1.read<Mmio_1::Ctrl>();
-
-						/* let RPC entrypoint continue MMIO access */
-						Signal_transmitter(_emu->_ack_calc_up_cap).submit();
-
-						/* do calculation */
-						unsigned result;
-						switch (Mmio_1::Ctrl::Mode::get(ctrl)) {
-						case Mmio_1::Ctrl::Mode::SUBTRACT:
-							result = arg1 - arg2;
-							break;
-						case Mmio_1::Ctrl::Mode::ADD:
-							result = arg1 + arg2;
-							break;
-						default:
-							break;
-						}
-						/* writeback results and announce end of calculation */
-						_emu->_mmio_2.write<Mmio_2::Result>(result);
-						_emu->_mmio_1.write<Mmio_1::Ctrl::Calc>(0);
-						_emu->_calc_done.up();
-					}
+                    return;
 				}
 		};
 
@@ -256,35 +226,6 @@ namespace Emulation
 		Signal_context_capability _ack_calc_up_cap;
 		Calculation_thread _calc_thread;
 
-		/**
-		 * Gets called when the emulator attempts to write to the MMIO
-		 */
-		void _before_write_mmio()
-		{
-			/* enable detection of calc-bit edges */
-			_old_calc = _mmio_1.read<Mmio_1::Ctrl::Calc>();
-		}
-
-		/**
-		 * Gets called after the emulator has written to the MMIO
-		 */
-		void _after_write_mmio()
-		{
-			/* process requests to clear the IRQ output */
-			if (_mmio_1.read<Mmio_1::Ctrl::Clr_irq>()) {
-				_calc_done.down();
-				_mmio_1.write<Mmio_1::Ctrl::Clr_irq>(0);
-			}
-			/* start calculation when calc bit goes up */
-			bool new_calc = _mmio_1.read<Mmio_1::Ctrl::Calc>();
-			if (!_old_calc && new_calc) {
-				Signal_transmitter(_calc_up_cap).submit();
-				while (_receiver.wait_for_signal().context() != &_ack_calc_up) ;
-			}
-			/* ensure that calc bit can't go down by a client write-access */
-			else if (_old_calc && !new_calc)
-				_mmio_1.write<Mmio_1::Ctrl::Calc>(1);
-		}
 
 		public:
 
@@ -311,82 +252,14 @@ namespace Emulation
 			void write_mmio(addr_t const off, Access const a,
 			                umword_t const value)
 			{
-				/* initialize access */
-				_before_write_mmio();
-
-				/* check arguments */
-				if (off > sizeof(_mmio)/sizeof(_mmio[0])) {
-					PERR("%s:%d: Invalid offset", __FILE__, __LINE__);
-					return;
-				}
-				/* write targeted bits with specific endianness to MMIO */
-				switch (MMIO_ENDIANNESS) {
-				case BIG_ENDIAN: {
-					switch (a) {
-					case Rm_session::LSB32: {
-						uint32_t * const dest = (uint32_t *)&_mmio[off];
-						uint32_t * const src =
-							(uint32_t *)&value +
-							sizeof(umword_t)/sizeof(uint32_t) - 1;
-						*dest = *src;
-						break; }
-					case Rm_session::LSB16: {
-						uint16_t * const dest = (uint16_t *)&_mmio[off];
-						uint16_t * const src =
-							(uint16_t *)&value +
-							sizeof(umword_t)/sizeof(uint16_t) - 1;
-						*dest = *src;
-						break; }
-					case Rm_session::LSB8: {
-						uint8_t * const dest = (uint8_t *)&_mmio[off];
-						uint8_t * const src =
-							(uint8_t *)&value +
-							sizeof(umword_t)/sizeof(uint8_t) - 1;
-						*dest = *src;
-						break; }
-					default: {
-						PERR("%s:%d: Invalid access type", __FILE__, __LINE__);
-						break; }
-					}
-					break; }
-				default: {
-					PERR("%s:%d: Invalid endianess", __FILE__, __LINE__);
-					break; }
-				}
-				/* finish access */
-				_after_write_mmio();
+                PINF("WRITE addr %lx, value %lu\n", off, value);
+                return;
 			}
 
 			umword_t read_mmio(addr_t const off, Access const a)
 			{
-				/* check arguments */
-				if (off > sizeof(_mmio)/sizeof(_mmio[0])) {
-					PERR("%s: Invalid arguments", __PRETTY_FUNCTION__);
-					while(1);
-				}
-				/* read targeted bits from MMIO and return them */
-				switch (MMIO_ENDIANNESS) {
-				case BIG_ENDIAN: {
-					switch (a)
-					{
-					case Rm_session::LSB32: {
-						uint32_t * src = (uint32_t *)&_mmio[off];
-						return (umword_t)*src; }
-					case Rm_session::LSB16: {
-						uint16_t * src = (uint16_t *)&_mmio[off];
-						return (umword_t)*src; }
-					case Rm_session::LSB8: {
-						uint8_t * src = (uint8_t *)&_mmio[off];
-						return (umword_t)*src; }
-					default: {
-						PERR("%s:%d: Invalid access type", __FILE__, __LINE__);
-						return 0; }
-					}
-					break; }
-				default: {
-					PERR("%s:%d: Invalid endianess", __FILE__, __LINE__);
-					return 0; }
-				}
+                PINF("READ addr %lx\n", off);
+                return 12345678;
 			}
 
 			bool irq_handler(unsigned const irq,

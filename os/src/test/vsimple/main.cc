@@ -151,37 +151,17 @@ int main(int argc, char **argv)
 	/* initialize device drivers */
 	enum {
 		FPU_MMIO_1_BASE = 0x71000000,
-		FPU_MMIO_2_BASE = 0x71001000,
-		FPU_IRQ = 2000,
 	};
 	static Rm_session * const rm = env()->rm_session();
 	static Io_mem_connection fpu_mmio_1(FPU_MMIO_1_BASE, Fpu::MMIO_1_SIZE);
-	static Io_mem_connection fpu_mmio_2(FPU_MMIO_2_BASE, Fpu::MMIO_2_SIZE);
-	static Irq_connection fpu_irq(FPU_IRQ);
-	static Fpu fpu((addr_t)rm->attach(fpu_mmio_1.dataspace()),
-	               (addr_t)rm->attach(fpu_mmio_2.dataspace()), &fpu_irq);
-
-	/* do some calculations with the devices */
-	static unsigned a = 3;
-	static unsigned b = 2;
-	static unsigned sum = 0;
-	static unsigned diff = 0;
-	for(int i = 0; i < 5; i++) {
-		sum = fpu.sum(a,b);
-		diff = fpu.difference(a,b);
-
-		/* validate calculation result */
-		if (sum != a + b || diff != a - b) {
-			PERR("%s:%d: Calculation failure", __FILE__, __LINE__);
-			sleep_forever();
-		}
-		printf("%u + %u = %u\n", a, b, sum);
-		printf("%u - %u = %u\n", a, b, diff);
-
-		/* prepare next calculation */
-		a = sum;
-		b = diff;
-	}
-	sleep_forever();
+	
+    addr_t start = (addr_t)rm->attach(fpu_mmio_1.dataspace());
+    unsigned char readval = *(unsigned char*)start;
+    *((unsigned char*)start + 4) = 5;
+    *((unsigned char*)start + 1) = 6;
+    *((unsigned short*)start + 10) = 123456;
+    printf("read value is %i\n", (int) readval);
+    
+    sleep_forever();
 }
 
