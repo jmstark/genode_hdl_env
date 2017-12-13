@@ -16,6 +16,7 @@
 #include <base/printf.h>
 #include <io_mem_session/connection.h>
 #include <irq_session/connection.h>
+#include <util/mmio.h>
 
 using namespace Genode;
 

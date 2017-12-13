@@ -167,7 +167,7 @@ namespace Init
 	{
 		enum {
 			SESSION_ARGS_SIZE = 32,
-			SESSION_RAM = 8*1024,
+			SESSION_RAM = 12*1024,
 		};
 
 		Lock _service_announced;

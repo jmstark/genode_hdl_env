@@ -20,6 +20,7 @@
 #include <base/thread.h>
 #include <base/signal.h>
 #include <util/register.h>
+#include <util/mmio.h>
 
 /* local includes */
 #include <emulation_session/emulation_session.h>
@@ -321,21 +322,21 @@ namespace Emulation
 				switch (MMIO_ENDIANNESS) {
 				case BIG_ENDIAN: {
 					switch (a) {
-					case LSB32: {
+					case Rm_session::LSB32: {
 						uint32_t * const dest = (uint32_t *)&_mmio[off];
 						uint32_t * const src =
 							(uint32_t *)&value +
 							sizeof(umword_t)/sizeof(uint32_t) - 1;
 						*dest = *src;
 						break; }
-					case LSB16: {
+					case Rm_session::LSB16: {
 						uint16_t * const dest = (uint16_t *)&_mmio[off];
 						uint16_t * const src =
 							(uint16_t *)&value +
 							sizeof(umword_t)/sizeof(uint16_t) - 1;
 						*dest = *src;
 						break; }
-					case LSB8: {
+					case Rm_session::LSB8: {
 						uint8_t * const dest = (uint8_t *)&_mmio[off];
 						uint8_t * const src =
 							(uint8_t *)&value +
@@ -367,13 +368,13 @@ namespace Emulation
 				case BIG_ENDIAN: {
 					switch (a)
 					{
-					case LSB32: {
+					case Rm_session::LSB32: {
 						uint32_t * src = (uint32_t *)&_mmio[off];
 						return (umword_t)*src; }
-					case LSB16: {
+					case Rm_session::LSB16: {
 						uint16_t * src = (uint16_t *)&_mmio[off];
 						return (umword_t)*src; }
-					case LSB8: {
+					case Rm_session::LSB8: {
 						uint8_t * src = (uint8_t *)&_mmio[off];
 						return (umword_t)*src; }
 					default: {
