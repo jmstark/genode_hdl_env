@@ -252,6 +252,12 @@ namespace Init
 				bool writes;
 				assert(Instruction::load_store(instr, writes, state.format,
 				                               client_state->reg));
+
+				PINF("instruction: %x, %s, %s, reg: %x", instr,
+						writes ? "store" : "load",
+								state.format == LSB8 ? "LSB8 " : (state.format == LSB16 ? "LSB16" : "LSB32"), client_state->reg);
+
+
 				if (writes)
 				{
 					/* instruction attempts to write, get the value */
