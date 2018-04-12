@@ -258,6 +258,10 @@ namespace Init
 					assert(client_state->get_gpr(client_state->reg,
 					                             state.value));
 				} else assert(state.type == Rm_session::READ_FAULT);
+
+				PINF("instruction: 0x%x, %s, %s, reg: %u, value (only valid on store): 0x%x", instr, writes ? "store" : "load",
+					state.format == LSB8 ? "LSB8 " : (state.format == LSB16 ? "LSB16" : "LSB32"), client_state->reg, (uint32_t) state.value);
+
 				return state;
 			}
 
